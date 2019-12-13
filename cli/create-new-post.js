@@ -103,7 +103,7 @@ const fetchTitle = async category => {
         }
 
         const fileName = getFileName(val)
-        const dest = `${TARGET_DIR}/${category}/${fileName}.md`
+        const dest = `${TARGET_DIR}/${category}/${fileName}/${fileName}.md`
         const destFileExists = await fs.pathExists(dest)
 
         if (destFileExists) {
@@ -118,7 +118,7 @@ const fetchTitle = async category => {
   return title
 }
 
-module.exports = (async function() {
+module.exports = (async function () {
   const date = dateFns.format(new Date(), DATE_FORMAT)
 
   log.info('Create new post:: ', date)
@@ -135,8 +135,15 @@ module.exports = (async function() {
   const title = await fetchTitle(category)
   const fileName = getFileName(title)
   const contents = refineContents({ title, date, category })
+  const fileDir = `${destDir}/${fileName}`
+  const fileDirExists = await fs.pathExists(fileDir)
 
-  fs.writeFile(`${destDir}/${fileName}.md`, contents, err => {
+
+  if (!fileDirExists) {
+    await fs.ensureDir(fileDir)
+  }
+
+  fs.writeFile(`${destDir}/${fileName}/${fileName}.md`, contents, err => {
     if (err) {
       log.error('Unknown Error: Cannot write file!')
       return
