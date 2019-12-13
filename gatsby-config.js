@@ -54,12 +54,24 @@ module.exports = {
               inlineCodeMarker: '%',
             },
           },
-          `gatsby-remark-copy-linked-files`,
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+              destinationDir: "linked-file"
+            }
+          },
           `gatsby-remark-smartypants`,
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-emoji`,
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cache`,
+      options: {
+        cachePublic: true,
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
