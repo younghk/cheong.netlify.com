@@ -123,8 +123,8 @@ sender 에서 receiver 로 packet 을 전송하기 위해서는 서로의 주소
 3. switch S2 는 R1 이 보낸 ARP request packet 의 source MAC address(R1 MAC) 을 기록한다.  
   ![s2 mac table](./image15.png)
 
-4. SVR3 가 ARP reply 로 응답하게 된다.
-  ![svr3 arp table s2 mac table](./imag16.png)  
+4. SVR3 가 ARP reply 로 응답하게 된다.  
+  ![svr3 arp table s2 mac table](./image16.png)  
 
 5. R1 은 ARP reply packet 으로 ARP table entry 를 추가하게 된다.  
   ![r1 arp table](./image17.png)
