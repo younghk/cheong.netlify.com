@@ -121,7 +121,7 @@ $$
     - 2보다 큰 소수 p 에 대해 $p-1 = 2^kq$ 를 만족하는 k>0, 홀수인 q 에 대해,
     - $1 \lt a \lt p-1$ 인 $a$ 에 대해서
     - $a^q \mod{p} = 1$ 을 만족하거나
-    - $1 \leq j \leq k$ 의 범위 안의 어떤 j 에 대해 $a^{2^{j-1}} \mod{p} = -1 \mod{p} = p-1$ 를 만족한다.
+    - $1 \leq j \leq k$ 의 범위 안의 어떤 j 에 대해 $a^{2^{j-1}q} \mod{p} = -1 \mod{p} = p-1$ 를 만족한다.
 
 ### Miller-Rabin Algorithm
 
