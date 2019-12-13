@@ -14,7 +14,7 @@ See previous [Blog](https://younghk.netlify.com/)
 
 Required Features  
 
-- [ ] KaTeX (for mathematics representation)
+- [x] KaTeX (for mathematics representation)
 - [ ] copy code block
 - [ ] Table Of Contents(ToC)
 - [x] gif

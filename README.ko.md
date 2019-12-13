@@ -14,7 +14,7 @@ Gatsby 정적 페이지 제작 프레임워크를 사용해 제작한 블로그.
 
 Required Features  
 
-- [ ] KaTeX (for mathematics representation)
+- [x] KaTeX (for mathematics representation)
 - [ ] copy code block
 - [ ] Table Of Contents(ToC)
 - [x] gif
