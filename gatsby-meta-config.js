@@ -2,10 +2,10 @@ module.exports = {
   title: `Cheong`,
   description: `Cheong's log`,
   author: `Cheong`,
-  introduction: `I explain with words and code. I explain with words and code. I explain with words and code.`,
+  introduction: `오직 부끄러워야 할 것은 열심히 살지 않은 어제의 나이다.`,
   siteUrl: `https://cheong.netlify.com`, // Your blog site url
   social: {
-    github: `hwa1130k@gmail.com`, // Your GitHub account
+    github: `younghk`, // Your GitHub account
     medium: ``, // Your Medium account
     twitter: ``,
     facebook: ``,
