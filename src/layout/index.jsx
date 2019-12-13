@@ -8,6 +8,8 @@ import { rhythm } from '../utils/typography'
 
 import './index.scss'
 
+require(`katex/dist/katex.min.css`)
+
 export const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
 

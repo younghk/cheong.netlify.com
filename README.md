@@ -14,17 +14,17 @@ See previous [Blog](https://younghk.netlify.com/)
 
 Required Features  
 
-- [x] KaTeX (for mathematics representation)
+- [ ] KaTeX (for mathematics representation)
 - [ ] copy code block
 - [ ] Table Of Contents(ToC)
-- [ ] gif
+- [x] gif
 - [ ] image size
 - [ ] wide context view(for desktop)
 - [ ] gif loop infinity
 - [ ] About
 - [ ] RSS
 - [ ] hr tag
-- [x] image thumbnail  
+- [ ] image thumbnail  
 - [ ] Search page
 - [ ] paging  
 - [ ] table align

@@ -4,6 +4,8 @@ import { ThumbnailContainer } from '../thumbnail-container'
 import { ThumbnailItem } from '../thumbnail-item'
 import { CATEGORY_TYPE } from '../../constants'
 
+require(`katex/dist/katex.min.css`)
+
 export const Contents = ({ posts, countOfInitialPost, count, category }) => {
   const refinedPosts = useMemo(() =>
     posts
