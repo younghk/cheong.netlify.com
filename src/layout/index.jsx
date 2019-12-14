@@ -16,14 +16,16 @@ require(`katex/dist/katex.min.css`)
 
 export const Layout = ({ location, title, headings, path, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  const strArr = location.href.split('/')
-  var cnt = 0
-  var postPath = '/'
-  for (var i in strArr) {
-    cnt = cnt + 1
-    if (i >= 3) {
-      if (strArr[i][0] == '#') break
-      postPath += strArr[i] + '/'
+  if (location.href) {
+    const strArr = location.href.split('/')
+    var cnt = 0
+    var postPath = '/'
+    for (var i in strArr) {
+      cnt = cnt + 1
+      if (i >= 3) {
+        if (strArr[i][0] == '#') break
+        postPath += strArr[i] + '/'
+      }
     }
   }
   return (
