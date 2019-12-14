@@ -6,6 +6,8 @@ import { ThemeSwitch } from '../components/theme-switch'
 import { Footer } from '../components/footer'
 import { rhythm } from '../utils/typography'
 
+import { TableOfContents } from '../components/toc'
+
 import './index.scss'
 
 require(`katex/dist/katex.min.css`)

@@ -271,7 +271,7 @@ host A 의 external address (5.5.5.1) 와 host B 의 external address (5.5.5.2) 
 host A 가 {5.5.5.2:1001} 로 보내고 {5.5.5.2:1001} 에서 receive 할 것을 예상했으나 {10.1.1.2:5001} 로 받게 되었다. 이 경우에는 Discard 인가 Accept 인가?  
 
 > Discard!  
-> tcp 를 생각할 때 4 tuple 이 맞아야 받게 되는데 privae 을 쓰면 안 맞게 되기 때문에 바꿔주게 되는 것이다.
+> tcp 를 생각할 때 4 tuple 이 맞아야 받게 되는데 private 을 쓰면 안 맞게 되기 때문에 바꿔주게 되는 것이다.
 
 ## Mobile IP
 
@@ -334,19 +334,41 @@ Mobile IPv4 가 어떻게 동작하는지 확인해보자.
 
 ![ipv4 operation](./image32.png)
 
+초기에는 HoA 만 가지고 있다.
+
 ![ipv4 operation](./image33.png)
+
+위치가 이동하여 새로이 구성을 해야할 필요가 생긴다.  
+Agent Solicitation 을 통해 새 주소인 CoA 를 받는다.
 
 ![ipv4 operation](./image34.png)
 
+이 CoA 를 HA 에 알려주어야 하므로 Registration 을 진행한다.  
+그 결과 HA 는 HoA 와 CoA 에 대한 정보 모두를 가지게 된다.  
+
 ![ipv4 operation](./image35.png)
+
+이제 CN 에서 HA, FA 를 거쳐 MN 에게 packet 을 전송하면 된다.  
+HA -> FA 에서 헤더에 위와 같이 추가적인 정보가 붙는 것을 확인할 수 있다.  
 
 ![ipv4 operation](./image36.png)
 
+이제 MN 이 CN 에게도 FA 를 통해 packet 을 보낼 수 있게 된다.
+
 ![ipv4 operation](./image37.png)
+
+위와 같은 일련의 handover 과정이 끝난 후 시간이 지나 MN 이 다른 곳으로 또 이동했다고 해보자.  
+마찬가지로 Agent Discovery 를 진행해 FA 를 찾는다.
 
 ![ipv4 operation](./image38.png)
 
+새로 얻은 new CoA 를 HA 에 알려주는 registration 을 진행한다.
+
 ![ipv4 operation](./image39.png)
+
+registration 이후 다시 MN->CN packet 전송이 가능해졌다.  
+
+이렇게 위의 도식에서 볼 수 있듯이 triangle 형태의 연결모양이 생기게 된다.  
 
 ### Mobile IPv4 Features
 
@@ -511,7 +533,7 @@ IPsec 은 두 파트로 나뉜다.
 
 IPsec 은 위와 같은 구조를 가지게 된다.  
 IPsec 의 동작은 security association(SA) 를 맺는다고도 표현할 수 있다.  
-이 SA 가 맺어지면 SPD 에 기록하게 된다.
+이 SA 가 맺어지면 SPD(Security Policy Database) 에 기록하게 된다.
 
 - AH(Authentication Header)  
   단순히 authentication + integrity 를 수행하는 역할을 한다.  
@@ -537,6 +559,7 @@ routing protocol 은 간단하게 설명하면 network topology information 에 
 이를 위해 routing table 에는 best distance 와 the route(next hop) 을 기록하고 있게 된다.  
 
 간단한 예를 보면 다음과 같다.  
+C 에서 각 행을 가는데 각 열을 거쳐서 가는 cost 를 구하면
 
 ![distance vector algorithm example](./image56.png)
 
@@ -608,7 +631,7 @@ TCP 는 transparently reliable 한 통신을 할 수 있도록 해주는 protoco
 다음은 socket 과 관련된 함수들이다.
 
 - Create  
-  소켓의 형식에는 PF_INET(protocol family), AF_INET(address family) 두 가지가 있다. 이는 소켓이 디자인될 때 하나의 protocol 이 아니라 여러 protocol 을 지원할 수 있도록 하려했기 때문이다. 그러나 뭘 써도 상관은 없는 요즘이다.  
+  소켓의 형식에는 PF-INET(protocol family), AF-INET(address family) 두 가지가 있다. 이는 소켓이 디자인될 때 하나의 protocol 이 아니라 여러 protocol 을 지원할 수 있도록 하려했기 때문이다. 그러나 뭘 써도 상관은 없는 요즘이다.  
 - Bind  
   서버측에서 port 를 random 하게 생성할텐데 client 가 아는걸로 나의 주소와 port 를 일치시켜줘야 client 입장에서 통신이 가능해진다. 이를 위한 것이 _Bind_ 작업이다.  
   Bind 함수를 이용해 특정 IP 와 포트 번호를 연결할 수 있게 된다.  
@@ -678,8 +701,8 @@ connection 을 해제하는 과정도 살펴보자.
 <small>필기..ㅎㅎ</small>  
 
 1. 최초에 client-server 모두 ESTABLISHED 상태
-2. client 에서 FIN=1 을 보내고 소켓의 FIN_WAIT_1 상태로 변경
-3. server 에서 FIN=1 을 받고 CLOSE_WAIT 상태로 변경, ACK 를 보내고 client 가 이를 수신하면 FIN_WAIT_2 상태로 변경
+2. client 에서 FIN=1 을 보내고 소켓의 FIN\_WAIT\_1 상태로 변경
+3. server 에서 FIN=1 을 받고 CLOSE\_WAIT 상태로 변경, ACK 를 보내고 client 가 이를 수신하면 FIN\_WAIT\_2 상태로 변경
 4. server 에서 연결 종료를 위해 FIN 을 보냄, LASK_ACK 상태로 변경
 5. client 에서 FIN 을 받고 TIME_WAIT 상태로 돌입, ACK 를 전송
 6. server 에서 마지막 ACK 를 받으면 CLOSED 상태로 연결 종료, 시간이 지나면 client 도 CLOSED 상태로 연결 종료
