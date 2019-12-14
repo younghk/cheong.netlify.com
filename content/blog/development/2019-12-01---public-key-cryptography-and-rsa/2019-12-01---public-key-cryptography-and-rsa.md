@@ -42,7 +42,7 @@ description: "공개키 암호화 방식과 RSA를 공부하고 간략하게 정
 ![encryption with public key](./image1.png)
 
 public key 로 암호화 하여 메세지를 보내는 경우이다.  
-이렇게 함호화를 할 경우, receiver 만 복호화 할 수 있게 된다.  
+이렇게 암호화를 할 경우, receiver 만 복호화 할 수 있게 된다.  
 
 즉, data confidentiality 가 지켜지는 것이다.
 

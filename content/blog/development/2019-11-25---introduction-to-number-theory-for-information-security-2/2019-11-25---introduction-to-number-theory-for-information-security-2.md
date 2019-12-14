@@ -149,7 +149,7 @@ $\displaystyle 2^{s}d$ 형태로 바꾼다.
 $\displaystyle [1,n-1]$에서 임의의 $a$를 선택한다.
 [$\displaystyle [0,s-1]$의 모든 $r$에 대해 $\displaystyle a^{d}\,{\bmod {\,}}n\neq 1$이고 $\displaystyle a^{2^{r}d}\,{\bmod {\,}}n\neq n-1$이면 합성수이다.  
 위 조건을 만족하지 않으면 소수일 것 같다.  
-제곱을 반복하는 방법으로 모듈로 지수승을 계산하면 이 알고리즘의 시간복잡도는 $\displaystyle {\color {Blue}O}(k\,\log ^{3}n)$이다.($k$는 $a$의 개수이다.) 이때 FFT를 이용하여 곱셈의 횟수를 줄이면 시간복잡도를 $\displaystyle {\color {Blue}{\tilde {O}}}(k\,\log ^{2}n)$로 줄일 수 있다.
+제곱을 반복하는 방법으로 모듈로 지수승을 계산하면 이 알고리즘의 시간복잡도는 $\displaystyle {\color {Blue}O}(k\,\log ^{3}n)$이다.($k$는 $a$의 개수이다.) 이때 FFT를 이용하여 곱셈의 횟수를 줄이면 시간복잡도를 $\displaystyle {\color {Blue}{\tilde {O}}}(k\,\log ^{2}n)$로 줄일 수 있다.<small>[출처](https://en.wikipedia.org/wiki/Miller–Rabin_primality_test)</small>
 
 이제, 두 가지 예제를 풀어보자.
 
@@ -221,8 +221,8 @@ $\displaystyle [1,n-1]$에서 임의의 $a$를 선택한다.
 
 이는 우리가 위에서 본 inverse problem 등에 대한 것과 같은 맥락을 지니게 되는데, 모듈러 연산에서 $b=a^i \mod{p}$ 을 만족하는 $i$ 를 구하는 것을 생각해보자.  
 
-이 때, $i = d\log_ab \mod{p} = d\log_{a,p} b$ 라 쓸 수 있다.  
-여기서 $a$ 는 원시근일 경우 $i$ 가 반드시 존재하게 되며 그렇지 않을 경우 존재하지 않ㅇ르 수 있다.  
+이 때, $i = \text{d}\log_ab \mod{p} = \text{d}\log_{a,p} b$ 라 쓸 수 있다.  
+여기서 $a$ 는 원시근일 경우 $i$ 가 반드시 존재하게 되며 그렇지 않을 경우 존재하지 않을 수 있다.  
 
 ![discrete logarithm mod 19](./image2.png)
 

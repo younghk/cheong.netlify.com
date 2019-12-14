@@ -149,7 +149,7 @@ ElGamal Message Exchange 는 DH + Message Encryption 이라 볼 수 있다.
 > B 가 message $m = 17$ 을 (11,5) 로 보낸다고 할 때,
 > - random $k$ 를 $k=6$ 으로 정하면
 > - $K = y_A^k \mod{q} = 3^6 \mod{19} = 7$
-> - $C_1 = a^k \mod{q} = 10^6 \mod{19} = 11, C_2 = KM \mod{q} = 7 \cdot 17 \mod{19} = 5$
+> - $C_1 = a^k \mod{q} = 10^6 \mod{19} = 11, C_2 = KM \mod{q} = 7 \cdot 17 \mod{19} = 5$  
 > A 는 original message 를 얻기 위해
 > - $K = C_1^{x_A} \mod{q} = 11^5 \mod{19} = 7$
 > - $K^{-1} \mod{19} = 7^{-1} \mod{19} =11$

@@ -153,7 +153,7 @@ hash function 을 기반으로 _MAC_ 을 만드는 경우를 생각해보자.
 이 때, hash function 을 이용하는 이유로 hash 를 이용하면 빠를 뿐 아니라 crypto hah function code 가 광범위하게 가능하기 때문이다.(available)
 
 또한 hash 는 메세지에 속한 키를 포함하고 있기도 하다.  
-원래의 목적은 KeyedHash = Hash(Key|Messagre) 인데, 이를 활용하면 몇가지 취약점을 확인할 수 있게 된다.  
+원래의 목적은 KeyedHash = Hash(Key|Message) 인데, 이를 활용하면 몇가지 취약점을 확인할 수 있게 된다.  
 
 이로 인해 아예 새롭게 HMAC 이라는 것을 개발해내게 되었다.
 
@@ -187,7 +187,7 @@ _HMAC_ 은 그 구조상 hash algorithm 의 보안성과 연관이 있다.
 그렇기 때문에 _HMAC_ 을 공격하는 것은 hash 함수를 공격하는 것과 비슷하게 된다.
 
 - brute-force attack on key : O($2^n$)
-- birthdat attack : O($2^{n \over 2}$)  
+- birthday attack : O($2^{n \over 2}$)  
     - 그런데 keyed 되었기 때문에 매우 많은 양의 메세지를 관찰해야만 하게 되었다.
     - 공격자는 같은 키에 대해 $2^n$ 만큼의 메세지 블록을 확인해야 한다.
     - 따라서 128-bit MD5 같은 것도 _HMAC_ 에 사용할 수 있다.
@@ -262,7 +262,7 @@ _Authenticated Encryption_ 은 confidentiality 와 authenticity 를 동시에 �
     - SSL/TLS protocols (http)
 3. Encrypt-then-MAC: C=E(K2, M), T=MAC(K1, C)  
     - IPsec protocol (VPN, MAC with associated ciphertext)
-4. Encrypt-and_MAC: C=E(K2, M), T=MAC(K1, M)  
+4. Encrypt-and-MAC: C=E(K2, M), T=MAC(K1, M)  
     - SSH protocol (efficiency, parallelly computed M)
 
 이렇게 두 보안성을 충족시키는 방법으로 두 가지 모드가 있다.
