@@ -34,21 +34,25 @@ description: "Message Authentiation Code(MAC) 에 대해 간략하게 정리한 
 ### Symmetric Encryption for Message Authentication
 
 Encryption can provide authentication  
-    - ciphertext serves as its authenticator
+
+- ciphertext serves as its authenticator
 
 If symmetric encryption is used then:
-    - Receiver know  
-        1. Sender must have created it since only sender and receiver know key
-        2. Content have not been altered  
-            - There must be some internal structure to plaintext so that the receiver can distinguish between well-formed plaintext and random bits
+
+- Receiver know  
+  1. Sender must have created it since only sender and receiver know key  
+  2. Content have not been altered  
+      - There must be some internal structure to plaintext so that the receiver can distinguish between well-formed plaintext and random bits
 
 ### Public Encryption for Message Authentication
 
 Encryption provides no confidence of sender  
-    - Since anyone potentially knows public-key
+
+- Since anyone potentially knows public-key
 
 If sender signs message using his private-key  
-    - Have both secrecy and authentication
+
+- Have both secrecy and authentication
 
 Confidentiality, authentication, and signature at cost of two public-key uses on message  
 
@@ -89,7 +93,8 @@ __b.__ authentication 에 confidentiality 를 추가하기 위해 암호화 과�
 __c.__ 마찬가지로 confidentiality 를 추가하나, 메세지에 대한 암호화를 먼저 하고 MAC 이 ciphertext 로부터 온다는 것이 차이가 있다.(MAC after encryption, MAC from the ciphertext) 이렇게 할 경우 integrity 를 먼저 확인하고 그 후 복호화를 진행하면 되는데 이는 약간 더 효율적이게 된다.
 
 보통 MAC before encryption 을 선호하는데 MAC after encryption 만이 CCA-secure 를 만족한다.  
-    - When instantiated using an arbitrary CPA-secure encryption and an arbitrarysecure MAC (with unique tags)
+
+- When instantiated using an arbitrary CPA-secure encryption and an arbitrarysecure MAC (with unique tags)
 
 이는 application 별로 다른 시나리오가 존재할 수 있기 때문에 상황에 맞춰서 사용해야 한다.
 
@@ -112,8 +117,8 @@ $$
 가변 길이인 message M 이 secret key K 를 통해 fixed-size authenticator 가 되는 것을 생각하자.
 
 - Many-to-One function  
-    - potentially many messages have same MAC = collision
-    - 그러나 collision 을 찾기란 쉽지 않다.
+  - potentially many messages have same MAC = collision
+  - 그러나 collision 을 찾기란 쉽지 않다.
 
 > MAC 과 Hash 중 어떤 것이 collision 에 더 어려울까?
 > 둘 다 collision 을 만들어내는 방법이 도출되지는 않았으나 MAC 이 더 어렵다고 생각된다.
@@ -124,28 +129,28 @@ $$
 
 _MAC_ 은 다음과 같은 requirements 를 가진다.
 
-- 공격 유형에 대한 고려가 필요하다.
+- 공격 유형에 대한 고려가 필요하다.  
 - 다음의 세 가지 조건을 만족해야 한다.  
-    1. message 와 MAC 을 알고 있을 때 같은 MAC 을 가진 다른 메세지를 찾는 것이 어려워야 한다.(message replacement attack, collision)
-    2. MAC 은 uniformly distributed 여야 한다.(brute-force attack)
-    3. MAC 은 모든 비트에 대해 동등하게 나타나야 한다(bias)
+  1. message 와 MAC 을 알고 있을 때 같은 MAC 을 가진 다른 메세지를 찾는 것이 어려워야 한다.(message replacement attack, collision)  
+  2. MAC 은 uniformly distributed 여야 한다.(brute-force attack)  
+  3. MAC 은 모든 비트에 대해 동등하게 나타나야 한다(bias)  
 
 ### Security of MACs
 
 Brute-force attack  
 
 - hash function 에서 그 안정성은 hash code 의 길이에 의존적이었다.  
-    - 그 코스트는 O($2^{m \over 2}$)
-    - 128-bit 는 위험하며 160-bit 정도는 되어야 함.
+  - 그 코스트는 O($2^{m \over 2}$)  
+  - 128-bit 는 위험하며 160-bit 정도는 되어야 함.  
 - _MAC_ 에서는 known message-MAC pair 가 필요하다.  
-    - keyspace 또는 MAC 을 공격할 수 있다.
-    - 즉, 둘 중 작은 cost 의 공격을 선택하면 된다.($\min(2^k, 2^m)$)
-    - 이로 인해 128-bit MAC 이 최소 필요하다.
+  - keyspace 또는 MAC 을 공격할 수 있다.  
+  - 즉, 둘 중 작은 cost 의 공격을 선택하면 된다.($\min(2^k, 2^m)$)  
+  - 이로 인해 128-bit MAC 이 최소 필요하다.  
   
 Cryptanalytic attack
 
-- block cipher 처럼 brute-force attack 의 대체 수단으로 사용될 수 있다.
-- MAC 의 구조상 그 변형이 훨씬 많이 때문에 generalize 하여 cryptanalysis 를 수행하는게 조금 복잡하기도 하다.
+- block cipher 처럼 brute-force attack 의 대체 수단으로 사용될 수 있다.  
+- MAC 의 구조상 그 변형이 훨씬 많이 때문에 generalize 하여 cryptanalysis 를 수행하는게 조금 복잡하기도 하다.  
 
 ### MAC Based on Hash Function
 
@@ -188,9 +193,9 @@ _HMAC_ 은 그 구조상 hash algorithm 의 보안성과 연관이 있다.
 
 - brute-force attack on key : O($2^n$)
 - birthday attack : O($2^{n \over 2}$)  
-    - 그런데 keyed 되었기 때문에 매우 많은 양의 메세지를 관찰해야만 하게 되었다.
-    - 공격자는 같은 키에 대해 $2^n$ 만큼의 메세지 블록을 확인해야 한다.
-    - 따라서 128-bit MD5 같은 것도 _HMAC_ 에 사용할 수 있다.
+  - 그런데 keyed 되었기 때문에 매우 많은 양의 메세지를 관찰해야만 하게 되었다.
+  - 공격자는 같은 키에 대해 $2^n$ 만큼의 메세지 블록을 확인해야 한다.
+  - 따라서 128-bit MD5 같은 것도 _HMAC_ 에 사용할 수 있다.
 
 hash function 은 아주 빠른 것들이 존재하기 때문에 보안적인 측면과 속도적인 측면을 고려해 고를 수 있다.
 
@@ -286,12 +291,12 @@ encryption 과 MAC 을 위해 single key 가 사용된다.
 이 때 input elements 는 다음과 같다.
 
 - Plaintext message P of data block  
-    - authenticated and encrypted
+  - authenticated and encrypted
 - Associated data A  
-    - Authenticated but not encrypted
+  - Authenticated but not encrypted
 - Nonce N(random variable)  
-    - Unique and different for every instance
-    - Prevent replay attack
+  - Unique and different for every instance
+  - Prevent replay attack
 
 ![ccm operation](./image7.png)
 
@@ -326,12 +331,12 @@ MAC-only mode 와 GMAC 을 지원한다.
 이것이 CCM mode 의 _CMAC_ 과 큰 차이점이다.
 
 - proof  
-    - multiplication distributes over addition in a field
-    - For field, the XOR operation is the addition operation
-    - Consider a message consisting of two blocks
-    - The GHASH function is $((X_1 \cdot H) \oplus X_2) \cdot H$
-    - Multiplying through by H, we get $(X_1 \cdot H^2) \oplus (X_2 \cdot H)$
-    - repeatedly applying other blocks
+  - multiplication distributes over addition in a field
+  - For field, the XOR operation is the addition operation
+  - Consider a message consisting of two blocks
+  - The GHASH function is $((X_1 \cdot H) \oplus X_2) \cdot H$
+  - Multiplying through by H, we get $(X_1 \cdot H^2) \oplus (X_2 \cdot H)$
+  - repeatedly applying other blocks
 
 ![gcm authentication and encryption functions](./image9.png)
 
