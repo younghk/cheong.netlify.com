@@ -14,6 +14,8 @@ import { Disqus } from '../components/disqus'
 import { Utterences } from '../components/utterances'
 import * as ScrollManager from '../utils/scroll'
 
+import TableOfContents from '../components/toc'
+
 import '../styles/code.scss'
 
 export default ({ data, pageContext, location }) => {
@@ -28,27 +30,29 @@ export default ({ data, pageContext, location }) => {
   const { disqusShortName, utterances } = comment
 
   return (
-    <Layout location={location} title={title} >
-      <Head title={post.frontmatter.title} description={post.excerpt} />
-      <PostTitle title={post.frontmatter.title} />
-      <PostContainer html={post.html} />
-      <SocialShare title={post.frontmatter.title} author={author} />
-      {!!sponsor.buyMeACoffeeId && (
-        <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
-      )}
-      <Elements.Hr />
-      <Bio />
-      <PostNavigator pageContext={pageContext} />
-      {!!disqusShortName && (
-        <Disqus
-          post={post}
-          shortName={disqusShortName}
-          siteUrl={siteUrl}
-          slug={pageContext.slug}
-        />
-      )}
-      {!!utterances && <Utterences repo={utterances} />}
-    </Layout>
+    <>
+      <Layout location={location} title={title} headings={post.headings} path={post.frontmatter.path} >
+        <Head title={post.frontmatter.title} description={post.excerpt} />
+        <PostTitle title={post.frontmatter.title} />
+        <PostContainer html={post.html} />
+        <SocialShare title={post.frontmatter.title} author={author} />
+        {!!sponsor.buyMeACoffeeId && (
+          <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
+        )}
+        <Elements.Hr />
+        <Bio />
+        <PostNavigator pageContext={pageContext} />
+        {!!disqusShortName && (
+          <Disqus
+            post={post}
+            shortName={disqusShortName}
+            siteUrl={siteUrl}
+            slug={pageContext.slug}
+          />
+        )}
+        {!!utterances && <Utterences repo={utterances} />}
+      </Layout>
+    </>
   )
 }
 
@@ -75,6 +79,12 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        path
+      }
+      tableOfContents
+      headings {
+        depth
+        value
       }
     }
   }

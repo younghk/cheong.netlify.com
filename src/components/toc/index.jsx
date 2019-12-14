@@ -1,8 +1,9 @@
 import React from 'react'
 import throttle from 'lodash/throttle'
 import kebabCase from 'lodash/kebabCase'
+import { Link } from 'gatsby'
 
-class TableOfContents extends React.Component {
+export default class TableOfContents extends React.Component {
     HeaderManager = {
         tocHeader: [],
         postHeader: [],
@@ -78,10 +79,11 @@ class TableOfContents extends React.Component {
     render() {
         const tableOfContents = (
             <ul className="__table_of_contents-list">
-                {post &&
-                    post.headings.map(header => (
+
+                {this.headings &&
+                    this.headings.map(header => (
                         <li className="__table_of_contents-list-item" key={header.value} style={{ paddingLeft: `${header.depth - 1}rem` }}>
-                            <Link to={`${path}#${encodeURI(kebabCase(header.value))}`} className="post-single__table_of_contents-list-item-link">
+                            <Link to={`${path}#${encodeURI(kebabCase(header.value))}`} className="__table_of_contents-list-item-link">
                                 {header.value}
                             </Link>
                         </li>
@@ -95,5 +97,3 @@ class TableOfContents extends React.Component {
         )
     }
 }
-
-export default TableOfContents

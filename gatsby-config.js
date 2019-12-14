@@ -62,7 +62,6 @@ module.exports = {
             }
           },
           `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
           `gatsby-remark-emoji`,
           {
             resolve: `gatsby-remark-katex`,
