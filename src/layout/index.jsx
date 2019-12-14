@@ -37,7 +37,7 @@ export const Layout = ({ location, title, headings, path, children }) => {
             headings.map(header => (
               <li className="table_of_contents-list-item" key={header.value} style={{ paddingLeft: `${header.depth - 1}rem` }}>
                 <Link to={`${postPath}#${encodeURI(kebabCase(header.value))}`} className="table_of_contents-list-item-link">
-                  {header.value} = {kebabCase(header.value)}
+                  {header.value}
                 </Link>
               </li>
             ))}
