@@ -8,7 +8,7 @@ export default class TableOfContents extends React.Component {
         tocHeader: [],
         postHeader: [],
         setPostHeaderId() {
-            const headers = document.body.querySelectorAll('h1, h2, h3, h4, h5, h6')
+            const headers = document.body.querySelectorAll('.post_single__body > h1, h2, h3, h4, h5, h6')
             if (!headers) {
                 return
             }
@@ -21,8 +21,8 @@ export default class TableOfContents extends React.Component {
         },
 
         _getHeaders() {
-            const toc = document.body.querySelectorAll('.__table_of_contents-list-item')
-            const headers = document.body.querySelectorAll('h1, h2, h3, h4, h5, h6')
+            const toc = document.body.querySelectorAll('.table_of_contents-list-item')
+            const headers = document.body.querySelectorAll('.post_single__body > h1, h2, h3, h4, h5, h6')
             this.tocHeader = toc
             this.postHeader = headers
         },
@@ -41,6 +41,12 @@ export default class TableOfContents extends React.Component {
     }
 
     componentDidMout() {
+        this.registerEvent()
+        this.HeaderManager.setPostHeaderId()
+    }
+
+    shouldComponentUpdate() {
+        this.registerEvent()
         this.HeaderManager.setPostHeaderId()
     }
 
@@ -77,13 +83,25 @@ export default class TableOfContents extends React.Component {
     }
 
     render() {
+        const headings = this.props.headings
+        if (this.props.location.href) {
+            const strArr = location.href.split('/')
+            var cnt = 0
+            var postPath = '/'
+            for (var i in strArr) {
+                cnt = cnt + 1
+                if (i >= 3) {
+                    if (strArr[i][0] == '#') break
+                    postPath += strArr[i] + '/'
+                }
+            }
+        }
         const tableOfContents = (
-            <ul className="__table_of_contents-list">
-
-                {this.headings &&
-                    this.headings.map(header => (
-                        <li className="__table_of_contents-list-item" key={header.value} style={{ paddingLeft: `${header.depth - 1}rem` }}>
-                            <Link to={`${path}#${encodeURI(kebabCase(header.value))}`} className="__table_of_contents-list-item-link">
+            <ul className="table_of_contents-list">
+                {headings &&
+                    headings.map(header => (
+                        <li className="table_of_contents-list-item" key={header.value} style={{ paddingLeft: `${header.depth - 1}rem` }}>
+                            <Link to={`${postPath}#${encodeURI(kebabCase(header.value))}`} className="table_of_contents-list-item-link">
                                 {header.value}
                             </Link>
                         </li>
@@ -91,7 +109,7 @@ export default class TableOfContents extends React.Component {
             </ul>
         )
         return (
-            <div className="__table_of_contents">
+            <div className="table_of_contents">
                 {tableOfContents}
             </div>
         )
