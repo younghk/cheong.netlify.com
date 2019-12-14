@@ -20,7 +20,6 @@ export const Layout = ({ location, title, headings, path, children }) => {
   return (
     <React.Fragment>
       <Top title={title} location={location} rootPath={rootPath} />
-
       <TableOfContents location={location} headings={headings} />
       <div
         style={{
