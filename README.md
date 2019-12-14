@@ -15,9 +15,9 @@ See previous [Blog](https://younghk.netlify.com/)
 Required Features  
 
 - [x] KaTeX (for mathematics representation)
+- [x] gif
 - [ ] copy code block
 - [ ] Table Of Contents(ToC)
-- [x] gif
 - [ ] image size
 - [ ] wide context view(for desktop)
 - [ ] gif loop infinity
@@ -30,6 +30,7 @@ Required Features
 - [ ] table align
 - [ ] blockquote style
 - [ ] description
+- [ ] tags
 
 ---
 

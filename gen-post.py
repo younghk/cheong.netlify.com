@@ -16,7 +16,7 @@ p_name = p_name.replace("]", "")
 p_name = p_name.lower()
 
 f_name = date_time_dir+"---"+p_name
-dir = "./content/blog/development/"+f_name+"/"
+dir = "./content/blog/etc/"+f_name+"/"
 f_dir = dir+f_name+".md"
 
 try:

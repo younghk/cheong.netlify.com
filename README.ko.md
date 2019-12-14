@@ -15,9 +15,9 @@ Gatsby 정적 페이지 제작 프레임워크를 사용해 제작한 블로그.
 Required Features  
 
 - [x] KaTeX (for mathematics representation)
+- [x] gif
 - [ ] copy code block
 - [ ] Table Of Contents(ToC)
-- [x] gif
 - [ ] image size
 - [ ] wide context view(for desktop)
 - [ ] gif loop infinity
@@ -30,6 +30,7 @@ Required Features
 - [ ] table align
 - [ ] blockquote style
 - [ ] description
+- [ ] tags
 
 ---
 

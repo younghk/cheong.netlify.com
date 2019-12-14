@@ -12,7 +12,8 @@ const CONTENTS_DIR = '/content/blog'
 const TARGET_DIR = `${cwd}${CONTENTS_DIR}`
 const IGNORE_DIR = 'images'
 const UTF_8 = 'utf8'
-const DATE_FORMAT = 'YYYY-MM-DD HH:MM:SS'
+const DATETIME_FORMAT = 'YYYY-MM-DD HH:mm:ss'
+const DATE_FORMAT = 'YYYY-MM-DD'
 
 const ignoreFunc = (file, stats) =>
   stats.isDirectory() && path.basename(file) == IGNORE_DIR
@@ -25,7 +26,7 @@ const getCategories = async () => {
       .map(file => fs.readFileSync(file, UTF_8))
       .map(str => matter(str).data.category)
       .filter(val => !!val)
-      .map(str => str.trim().toLowerCase())
+    //.map(str => str.trim().toLowerCase())
   )
 }
 
@@ -119,13 +120,16 @@ const fetchTitle = async category => {
 }
 
 module.exports = (async function () {
+  const datetime = dateFns.format(new Date(), DATETIME_FORMAT)
   const date = dateFns.format(new Date(), DATE_FORMAT)
 
-  log.info('Create new post:: ', date)
+  log.info('Create new post:: ', datetime)
   log.start('Start to process!\n')
 
-  const category = await fetchCategory()
-  const destDir = `${TARGET_DIR}/${category}`
+  var category = await fetchCategory()
+  const categoryPath = category.replace(/ /g, '-').toLowerCase()
+  log.info('category :', categoryPath)
+  const destDir = `${TARGET_DIR}/${categoryPath}`
   const destDirExists = await fs.pathExists(destDir)
 
   if (!destDirExists) {
@@ -133,8 +137,8 @@ module.exports = (async function () {
   }
 
   const title = await fetchTitle(category)
-  const fileName = getFileName(title)
-  const contents = refineContents({ title, date, category })
+  const fileName = `${date}---` + getFileName(title)
+  const contents = refineContents({ title, datetime, category })
   const fileDir = `${destDir}/${fileName}`
   const fileDirExists = await fs.pathExists(fileDir)
 
@@ -151,6 +155,6 @@ module.exports = (async function () {
     console.log('')
 
     log.success('Success to create new post!')
-    log.note(`/${category}/${fileName}.md\n${contents}`)
+    log.note(`/${categoryPath}/${fileName}.md\n${contents}`)
   })
 })()
