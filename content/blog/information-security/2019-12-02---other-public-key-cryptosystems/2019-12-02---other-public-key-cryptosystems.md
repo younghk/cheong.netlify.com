@@ -352,7 +352,7 @@ OFB : $X_i = E_k[X_{i-1}]$
 
 RSA 기반 PRNG 의 모습이다.  
 
-이 때, 전부 다 재사용하는 것이 아니라 r most significan bits 만 다음 라운드에 이용되는 것과, k least significant bits 만 각 라운드에서 추출된 pseudorandom no. 임을 확인하자.
+이 때, 전부 다 재사용하는 것이 아니라 r most significant bits 만 다음 라운드에 이용되는 것과, k least significant bits 만 각 라운드에서 추출된 pseudorandom no. 임을 확인하자.
 
 ECC 기반 PRNG 는 어떨까?  
 

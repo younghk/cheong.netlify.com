@@ -86,11 +86,11 @@ $$
 해쉬 함수는 그 외에도 다른 곳에 쓰일 수 있다.
 
 - one-way password file  
-    흔히 비밀번호를 저장하는 방법이다. 실제 데이터가 아닌 hash 된 데이터만 저장해 이것이 일치하는지만 확인한다.
-- intrusion detection(침입 탐지) & virus detection
-    file 이나 system 의 해쉬값을 지속적으로 확인함으로써 탐지하게 된다.
-- pseudorandom function(PRF) 또는 pseudorandom number generator
-    대칭키를 만드는데 사용한다.
+  흔히 비밀번호를 저장하는 방법이다. 실제 데이터가 아닌 hash 된 데이터만 저장해 이것이 일치하는지만 확인한다.
+- intrusion detection(침입 탐지) & virus detection  
+  file 이나 system 의 해쉬값을 지속적으로 확인함으로써 탐지하게 된다.
+- pseudorandom function(PRF) 또는 pseudorandom number generator  
+  대칭키를 만드는데 사용한다.
 
 ## Two Simple Insecure Hash Functions
 
