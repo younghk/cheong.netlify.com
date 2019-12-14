@@ -84,6 +84,16 @@ e.g. 문장에서 대신 쓰일 수 있는 것. good -> bad, excellent, reasonab
 
 ### DeepWalk
 
+_DeepWalk_ 는 random walk 후 _SkipGram_ 을 진행한다.  
+
+- random walk : 현재 선택된 노드와 연결된 노드 중 random 하게 움직임.  
+  이는 근접 노드들은 similar embedding 일 것이라 생각하기 때문  
+
+이는 만들어진 random vecor 에 대해 진행하며, softmax 를 이용해 node embedding update(by gradient descent) 를 진행한다.  
+
+- SkipGram : window size 만큼 앞뒤로 트레이닝을 시도, 각각의 노드에 대해 따로 학습을 진행  
+이를 통해 CBOW 보다 더 많은 학습이 가능하다.(window size=2 일 때 4배의 학습)
+
 ### node2vec
 
 BFS 와 DFS 를 이용해 node 를 탐색  
