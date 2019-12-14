@@ -180,4 +180,4 @@ $$
 h_v^k = \sigma \left( \sum_{u \in N(v) \cup v}{\alpha_{u,v}W^kh_v^{k-1}}\right)
 $$
 
-여기서 $\alpha_{u,v} = {\exp(\text{LeakyReLU}(a^T[Wh_v,Wh_u])) \over \sum_{u' \in N(v)\cup v}{\exp{\text{LeakyReLU}(a^T[Wh_v,Wh_{u'}])}}}$ 이다.
+여기서 $\alpha_{u,v} = {\exp(\text{LeakyReLU}(a^T[Wh_v,Wh_u])) \over \sum_{u' \in N(v)\cup v}{\exp({\text{LeakyReLU}(a^T[Wh_v,Wh_{u'}]))}}}$ 이다.
