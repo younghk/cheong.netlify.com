@@ -155,7 +155,7 @@ Cryptanalytic attack
 ### MAC Based on Hash Function
 
 hash function 을 기반으로 _MAC_ 을 만드는 경우를 생각해보자.  
-이 때, hash function 을 이용하는 이유로 hash 를 이용하면 빠를 뿐 아니라 crypto hah function code 가 광범위하게 가능하기 때문이다.(available)
+이 때, hash function 을 이용하는 이유로 hash 를 이용하면 빠를 뿐 아니라 crypto hash function code 가 광범위하게 가능하기 때문이다.(available)
 
 또한 hash 는 메세지에 속한 키를 포함하고 있기도 하다.  
 원래의 목적은 KeyedHash = Hash(Key|Message) 인데, 이를 활용하면 몇가지 취약점을 확인할 수 있게 된다.  
@@ -407,6 +407,6 @@ padding oracle attack 의 변형을 통해 공격을 감행하며, TLS 와 DTLS(
 
 <small>최종 수정일 : 2019-12-5</small>
 
-> 본 포스트는 _정보보호_ 를 공부하며 정리한 글 입니다.  
+> 본 포스트는 학부-_정보보호_ 를 공부하며 정리한 글 입니다.  
 > 잘못된 내용이 있다면 알려주세요!  
 > 감사합니다 :)

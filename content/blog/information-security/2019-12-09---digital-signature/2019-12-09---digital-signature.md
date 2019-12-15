@@ -37,7 +37,7 @@ _Digital Signature_ 의 모델은 위와 같다.
 이 때 필요한 elements 들이 위에 나타나있다.  
 
 - Cryptographic hash function  
-    - 이는 collision resistant 해야 한다. 그렇지 않으면 공격당하기 쉬워진다.(hash 함수의 특성)
+  - 이는 collision resistant 해야 한다. 그렇지 않으면 공격당하기 쉬워진다.(hash 함수의 특성)
 - 이를 통해 만든 해쉬값 $h$ 를 암호화해서 Signature $S$ 를 만든다.
 - 수신자(Alice)는 검증의 과정을 거쳐서 해당 signature 가 valid 한지 판별한다.  
 
@@ -46,34 +46,34 @@ _Digital Signature_ 의 모델은 위와 같다.
 이러한 _Digital Signature_ 를 공격하거나 위조하는데 어떤 것들이 있는지 살펴보자.
 
 - Key-only Attack  
-    - A 의 public key 만 알 경우(A 의 signature 가 공격당하는 상황)
+  - A 의 public key 만 알 경우(A 의 signature 가 공격당하는 상황)
 - Known message attack  
-    - message 와 signature 집합에 접근이 가능한 경우
+  - message 와 signature 집합에 접근이 가능한 경우
 - Generic chosen message attack  
-    - 공격 전 A 의 public key 와 독립적으로 메세지 리스트를 고를 수 있다.  
-    - 그리고 A 로부터 고른 메세지의 valid signature 를 얻는다.
+  - 공격 전 A 의 public key 와 독립적으로 메세지 리스트를 고를 수 있다.  
+  - 그리고 A 로부터 고른 메세지의 valid signature 를 얻는다.
 - Directed chosen message attack
-    - A 의 public key 를 알고 메세지 리스트를 고른다.
-    - 그리고 메세지의 valid signature 를 얻는다.
+  - A 의 public key 를 알고 메세지 리스트를 고른다.
+  - 그리고 메세지의 valid signature 를 얻는다.
 - Adaptive chosen message attack  
-    - A 를 _orcale_ 로써 사용한다.
-    - A 는 이전에 얻은 message-signature pair 에 의존적인 메세지의 signature 를 요청하게 된다.
-    - 이는 public key 를 몇 개 얻은 후, 그 다음 것을 고르는 방식이다.
+  - A 를 _orcale_ 로써 사용한다.
+  - A 는 이전에 얻은 message-signature pair 에 의존적인 메세지의 signature 를 요청하게 된다.
+  - 이는 public key 를 몇 개 얻은 후, 그 다음 것을 고르는 방식이다.
 
 - Break success levels  
-    1. Total break  
-        - A 의 private key 를 결정짓는다.
-        - 매우 어려운 단계이다.
-    2. Universal forgery  
-        - 해당 algorithm 에 대한 공격이다.  
-        - 해당 algorithm 과 동등한 signature 를 만들어내는 효율적인 signing algorithm 을 찾는다.
-    3. Selective forgery  
-        - 선택한 하나의 메세지에 대해서만 하나의 페어를 찾아낸다.
-        - weak collision hash
-    4. Existential forgery  
-        - 적어도 하나의 signature 를 위조하는 것
-        - 전체적인 메세지에 대한 컨트롤은 없다.
-        - strong collision hash
+  1. Total break  
+      - A 의 private key 를 결정짓는다.
+      - 매우 어려운 단계이다.
+  2. Universal forgery  
+      - 해당 algorithm 에 대한 공격이다.  
+      - 해당 algorithm 과 동등한 signature 를 만들어내는 효율적인 signing algorithm 을 찾는다.
+  3. Selective forgery  
+      - 선택한 하나의 메세지에 대해서만 하나의 페어를 찾아낸다.
+      - weak collision hash
+  4. Existential forgery  
+      - 적어도 하나의 signature 를 위조하는 것
+      - 전체적인 메세지에 대한 컨트롤은 없다.
+      - strong collision hash
 
 ### Digital Signatures Requirements
 
@@ -81,15 +81,15 @@ _Digital Signature_ 의 모델은 위와 같다.
 
 - must depend on the message signed
 - unique information 을 sender 에게 사용해야 한다.  
-    - 이는 양쪽이 위조되고 거부되는 것을 막기 위함이다.
-    - unique 하지 않을 경우 더이상 보안이 보장되지 않는다.  
+  - 이는 양쪽이 위조되고 거부되는 것을 막기 위함이다.
+  - unique 하지 않을 경우 더이상 보안이 보장되지 않는다.  
 - 상대적으로 생산하기(produce) 쉬워야 한다.
 - 상대적으로 인식하고 검증하기 쉬워야 한다.
 - 위조하는데는 computationally infeasible 해야 한다.  
-    - 새로운 메세지에 대해 기존의 digital signature 가 이를 만족해야 함.
-    - 또한 주어진 메세지의 의심스러운 digital signature 에 대해서도 가능해야 함.
+  - 새로운 메세지에 대해 기존의 digital signature 가 이를 만족해야 함.
+  - 또한 주어진 메세지의 의심스러운 digital signature 에 대해서도 가능해야 함.
 - storage 에 현실적으로 저장 가능해야 함.  
-    - digital signature 가 비정상적으로 클 경우 storage 에 overhead 가 될 수 있다.
+  - digital signature 가 비정상적으로 클 경우 storage 에 overhead 가 될 수 있다.
 
 ### Direct Digital Signatures
 
@@ -120,8 +120,8 @@ private key 를 이용해 encryption 해서 signing 과정을 진행하고, publ
 
 - 비밀 키를 고른다. $1 \lt x_A \lt q-1$
 - public key 를 계산한다.  
-    - {a, q, and $y_A = a^{x_A} \mod q$}
-    - 여기서 a 는 q 의 primitive root 이다.  
+  - {a, q, and $y_A = a^{x_A} \mod q$}
+  - 여기서 a 는 q 의 primitive root 이다.  
 <small>이는 앞서 본 ElGamal cryptography 와 유사하다.</small>
 
 signed message M 은 다음과 같이 만들어진다.  
@@ -165,7 +165,7 @@ $$
 >   - signature = (3, 4)
 > - B 가 verify 할 때는
 >   - $V_1 = 10^{14} \mod{19} = 16$
->   - $V_2 = 4^3 \cdot 3^4 = 5184 = 16 \mod{19}$
+>   - $V_2 = 4^3 \cdot 3^4 \mod{19} = 5184 \mod{19} \equiv 16 \mod{19}$
 >   - 16 = 16 이므로 signature 가 valid 하다.
 
 ## Schnorr Digital Signatures
@@ -293,10 +293,12 @@ message M 을 어떻게 signing 하는지 알아보자.
 _DSA Signature_ 를 verify 하는 과정을 살펴보자.  
 
 $$
-x = s^{-1} \mod {q} \\ 
-u_1 = [H(M)w] \mod{q} \\
-u_2 = (rw) \mod{q} \\
-v = [(g^{u_1}y^{u_2}) \mod{p}] \mod{q}
+\begin{aligned}
+x   &= s^{-1} \mod {q} \\ 
+u_1 &= [H(M)w] \mod{q} \\
+u_2 &= (rw) \mod{q} \\
+v   &= [(g^{u_1}y^{u_2}) \mod{p}] \mod{q}
+\end{aligned}
 $$
 
 이 때 $v = r$ 이면 valid 하다.
@@ -340,7 +342,7 @@ $$
 - broadcast 를 한다.
 - 편리하지만 누구나 이 announcement(broadcast) 를 위조하기 쉽다.
 
-이러한 물음에 답하기 위해 public ket certificate 를 고안하게 되었다.  
+이러한 물음에 답하기 위해 public key certificate 를 고안하게 되었다.  
 
 - public key + ID of the key owner 로 구성된다.
 - 전체 block 이 신뢰하는 third party, certificate authority(CA) 로부터 sign 된다. (RSA, DSA 사용)
@@ -393,6 +395,6 @@ __Monero__ 의 특징은 다음과 같다.
 
 <small>최종 수정일 : 2019-12-10</small>
 
-> 본 포스트는 _정보보호_ 를 공부하며 정리한 글 입니다.  
+> 본 포스트는 학부-_정보보호_ 를 공부하며 정리한 글 입니다.  
 > 잘못된 내용이 있다면 알려주세요!  
 > 감사합니다 :)
