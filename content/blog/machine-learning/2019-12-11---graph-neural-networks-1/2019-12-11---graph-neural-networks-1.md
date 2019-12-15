@@ -123,6 +123,17 @@ z_v &= h_v^K
 \end{aligned}
 $$
 
+![neighborhood aggregation](./image8.png)  
+
+왼쪽과 같은 그래프 구조를 가지고 각 노드별 feature 가 주어져있다고 할 때, target node A 에 대해 오른쪽과 같은 형식으로 layer 를 쌓을 수 있다.  
+이는 각 node 별로 나타나는 이웃 node 에 대해서 vector embedding 을 얻어낼 수 있게 된다.  
+이는 인접 node 들의 정보를 함께 사용하는 구조를 활용하는 것이다.
+
+오른쪽과 같이 두 개의 layer 를 쌓았다고 생각을 해보면, 더 복잡한 구조에 대한 학습이 가능할 것이다.  
+이 때, layer 에는 Aggregate 와 Concatenate 가 진행되게 된다.  
+
+이를 위해 Aggregate, Concat, Loss 함수를 잘 정의해주어야 한다.  
+
 ### Training the Model
 
 Unsupervised Loss : with cosine similarity function  
@@ -172,6 +183,13 @@ $$
 - LSTM or GRU
   LSTM 을 적용해 볼 수 있다. 성능은 좋으나 느리다.
 
+### Gated Graph Neural Networks
+
+![gated gnn](./image9.png)
+
+- overfitting / gradient vanishing, explode  
+  - feature 가 많을 때 덜 중요한 feature 를 많이 사용할 경우  
+
 ### Graph Attention Networks(GAT)
 
 몇몇 이웃들은 더 중요할 수도 있다. -> Attention mechanism  
@@ -181,3 +199,12 @@ h_v^k = \sigma \left( \sum_{u \in N(v) \cup v}{\alpha_{u,v}W^kh_v^{k-1}}\right)
 $$
 
 여기서 $\alpha_{u,v} = {\exp(\text{LeakyReLU}(a^T[Wh_v,Wh_u])) \over \sum_{u' \in N(v)\cup v}{\exp({\text{LeakyReLU}(a^T[Wh_v,Wh_{u'}]))}}}$ 이다.
+
+![gat](./image10.png)  
+
+위와 같이 multi-head attention 을 진행하게 된다.  
+
+![attention](./image11.png)
+
+LeackyReLu 와 softmax 를 이용해 attention coefficient 를 계산하는 과정을 볼 수 있다.  
+
