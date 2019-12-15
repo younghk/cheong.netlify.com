@@ -14,22 +14,22 @@ description: "Message Authentiation Code(MAC) 에 대해 간략하게 정리한 
 ## Message Authentication
 
 - Message authentication is concerned with:
-    - Protecting the integrity of a message
-    - Validating identity of originator
-    - Non-repudiation of origin (dispute resolution)
+  - Protecting the integrity of a message
+  - Validating identity of originator
+  - Non-repudiation of origin (dispute resolution)
 - Three algternative functions for authenticator
-    - Hash function
-    - Message encryption
-    - Message authentication code(MAC)
+  - Hash function
+  - Message encryption
+  - Message authentication code(MAC)
 
 - Requirements  
 
-    Attacks|Measures
-    :---:|:---:
-    Disclosure<br />Traffic analysis | Message hiding (e.g., encryption)
-    Masquerade<br />Content modification<br />Sequence modification<br />Timing modification|Message authentication<br />Digital signature
-    Source repudiation|Digital signature
-    Destination repudiation|Digital signature + additional protocol
+  Attacks|Measures
+  :---:|:---:
+  Disclosure<br />Traffic analysis | Message hiding (e.g., encryption)
+  Masquerade<br />Content modification<br />Sequence modification<br />Timing modification|Message authentication<br />Digital signature
+  Source repudiation|Digital signature
+  Destination repudiation|Digital signature + additional protocol
 
 ### Symmetric Encryption for Message Authentication
 
@@ -89,12 +89,12 @@ _MAC_ 의 기본적인 세 가지 쓰임새를 간략하게 살펴보자.
 ![basic uses of mac](./image3.png)
 
 __a.__ 기본적인 message authentication 에 사용된 모습이다.  
-__b.__ authentication 에 confidentiality 를 추가하기 위해 암호화 과정을 한 번 거치게 된다. (MAC before the encryption, MAC from the plaintext) 수신자 입장에서는 복호화를 먼저 한 후 integrity 를 check 하게 된다.
-__c.__ 마찬가지로 confidentiality 를 추가하나, 메세지에 대한 암호화를 먼저 하고 MAC 이 ciphertext 로부터 온다는 것이 차이가 있다.(MAC after encryption, MAC from the ciphertext) 이렇게 할 경우 integrity 를 먼저 확인하고 그 후 복호화를 진행하면 되는데 이는 약간 더 효율적이게 된다.
+__b.__ authentication 에 confidentiality 를 추가하기 위해 암호화 과정을 한 번 거치게 된다. (MAC before the encryption, MAC from the plaintext) 수신자 입장에서는 복호화를 먼저 한 후 integrity 를 check 하게 된다.  
+__c.__ 마찬가지로 confidentiality 를 추가하나, 메세지에 대한 암호화를 먼저 하고 MAC 이 ciphertext 로부터 온다는 것이 차이가 있다.(MAC after encryption, MAC from the ciphertext) 이렇게 할 경우 integrity 를 먼저 확인하고 그 후 복호화를 진행하면 되는데 이는 약간 더 효율적이게 된다.  
 
 보통 MAC before encryption 을 선호하는데 MAC after encryption 만이 CCA-secure 를 만족한다.  
 
-- When instantiated using an arbitrary CPA-secure encryption and an arbitrarysecure MAC (with unique tags)
+- When instantiated using an arbitrary CPA-secure encryption and an arbitrary secure MAC (with unique tags)
 
 이는 application 별로 다른 시나리오가 존재할 수 있기 때문에 상황에 맞춰서 사용해야 한다.
 
