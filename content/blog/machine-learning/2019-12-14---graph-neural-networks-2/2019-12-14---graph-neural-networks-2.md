@@ -17,7 +17,8 @@ category: Machine Learning
 - Simple Readout : Average / Max / Min / ...  
   ![simple readout](./image3.png)  
 - Neural Networks for Readout : GG-NN / Set2Set / SortPool  
-  ![nn for readout](./image4.png)
+  ![nn for readout](./image4.png)  
+  SortPool 은 각 node 에 대해 feature 별로 sorting 한 후 몇 개의 node 만 선택하는 방법
   
 ### Hierarchical Pooling  
 
@@ -27,10 +28,17 @@ category: Machine Learning
   ![gpool](./image6.png)  
 - SAGPool(Self-Attention Graph Pooling)  
   ![sagpool](./image7.png)  
+  - 여기서 $\tilde{A} \in \mathbb{R}^{N\times N}$ 는 Adjacency matrix  
+  - $\tilde{D} \in \mathbb{R}^{N\times N}$ 는 degree matrix of $\tilde{A}$  
+  - $X \in \mathbb{R}^{N\times F}$ 는 N 개의 node 의 F dimensional feature 를 가진 input graph feature  
+  - SAGPool 에서 parameter 는 $\Theta_{att} \in \mathbb{R}^{F \times 1}$ 뿐이다.  
+  - pooling 결과는 graph feature 와 topology 에 기반하며, graph convolution 을 이용해 self-attention score 를 얻는다.  
+  - node selection method 은 다양한 크기와 구조의 입력에 대해서도 입력 그래프의 노드 일부를 유지할 수 있도록 함.
+  - 
 - EdgePool  
   ![edgepool](./image8.png)
 
-## Scene graph learning 
+## Scene graph learning  
 
 ![scene graph learning pipeline](./image9.png)
 
