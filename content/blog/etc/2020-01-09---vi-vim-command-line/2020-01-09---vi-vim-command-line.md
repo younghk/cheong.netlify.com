@@ -1,6 +1,6 @@
 ---
 draft:     true
-title:     "vi vim command line"
+title:     "VI VIM Command Line 명령어 정리"
 date:      "2020-01-09 21:50:12"
 layout:    post
 path:      "/posts/vi-vim-command-line/"

@@ -1,6 +1,6 @@
 ---
 title: Graph Neural Networks 2
-datetime: 2019-12-14 12:53:57
+date: 2019-12-14 12:53:57
 path:       "/machine-learning/2019-12-14---graph-neural-networks-2/2019-12-14---graph-neural-networks-2/"
 category: Machine Learning
 ---

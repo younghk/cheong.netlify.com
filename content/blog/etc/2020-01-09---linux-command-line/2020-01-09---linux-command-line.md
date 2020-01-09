@@ -1,6 +1,6 @@
 ---
-title: linux-command-line
-datetime: 2020-01-09 21:45:24
+title: Linux Command Line 명령어 정리
+date: 2020-01-09 21:45:24
 path:       "/etc/2020-01-09---linux-command-line/2020-01-09---linux-command-line/"
 category: ETC
 ---
