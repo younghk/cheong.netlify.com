@@ -139,9 +139,9 @@ $RC[1]=1, RC[j]=2\times RC[j-1]$
 
 이에 따른 _RC table_ 은 아래와 같다.  
 
-| j     | 1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 |
-|-------|----|----|----|----|----|----|----|----|----|----|
-| RC\[j\] | 01 | 02 | 04 | 08 | 10 | 20 | 40 | 80 | 1B | 36 |  
+| j       | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  |
+| ------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| RC\[j\] | 01  | 02  | 04  | 08  | 10  | 20  | 40  | 80  | 1B  | 36  |
 
 즉, AES 에서 _key_ 는 다음과 같이 진행된다.  
 
@@ -262,11 +262,11 @@ __4 table lookup + 4 XOR__ 을 이용할 경우 4KB 의 저장공간으로 그 �
 
 각 state 를 우선 정리하면 다음과 같다.  
 
-|SubBytes|$b_{i,j} = S\left[a_{i,j}\right]$|
-|:---|:---:|
-|ShiftRows|$\left[ \begin{matrix} c_{0,j} \\ c_{1,j} \\ c_{2,j} \\ c_{3,j} \end{matrix} \right] = \left[ \begin{matrix}  b_{0,j} \\ b_{1,j-1} \\ b_{2,j-2} \\ b_{3,j-3} \end{matrix} \right]$|
-|MixColumns|$\left[ \begin{matrix} d_{0,j} \\ d_{1,j} \\ d_{2,j} \\ d_{3,j} \end{matrix} \right] = \left[ \begin{matrix} 02 & 03 & 01 & 01 \\ 01 & 02 & 03 & 01 \\ 01 & 01 & 02 & 03 \\ 03 & 01 & 01 & 02 \end{matrix} \right] \left[ \begin{matrix}  c_{0,j} \\ c_{1,j} \\ c_{2,j} \\ c_{3,j} \end{matrix} \right]$|
-|AddRoundKey|$\left[ \begin{matrix} e_{0,j} \\ e_{1,j} \\ e_{2,j} \\ e_{3,j} \end{matrix} \right] = \left[ \begin{matrix} d_{0,j} \\ d_{1,j} \\ d_{2,j} \\ d_{3,j} \end{matrix} \right] \oplus \left[ \begin{matrix} k_{0,j} \\ k_{1,j} \\ k_{2,j} \\ k_{3,j} \end{matrix} \right]$|
+| SubBytes    |                                                                                                                                    $b_{i,j} = S\left[a_{i,j}\right]$                                                                                                                                     |
+| :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ShiftRows   |                                                            $\left[ \begin{matrix} c_{0,j} \\ c_{1,j} \\ c_{2,j} \\ c_{3,j} \end{matrix} \right] = \left[ \begin{matrix}  b_{0,j} \\ b_{1,j-1} \\ b_{2,j-2} \\ b_{3,j-3} \end{matrix} \right]$                                                            |
+| MixColumns  | $\left[ \begin{matrix} d_{0,j} \\ d_{1,j} \\ d_{2,j} \\ d_{3,j} \end{matrix} \right] = \left[ \begin{matrix} 02 & 03 & 01 & 01 \\ 01 & 02 & 03 & 01 \\ 01 & 01 & 02 & 03 \\ 03 & 01 & 01 & 02 \end{matrix} \right] \left[ \begin{matrix}  c_{0,j} \\ c_{1,j} \\ c_{2,j} \\ c_{3,j} \end{matrix} \right]$ |
+| AddRoundKey |                  $\left[ \begin{matrix} e_{0,j} \\ e_{1,j} \\ e_{2,j} \\ e_{3,j} \end{matrix} \right] = \left[ \begin{matrix} d_{0,j} \\ d_{1,j} \\ d_{2,j} \\ d_{3,j} \end{matrix} \right] \oplus \left[ \begin{matrix} k_{0,j} \\ k_{1,j} \\ k_{2,j} \\ k_{3,j} \end{matrix} \right]$                  |
 
 이를 한 번에 정리하면 다음과 같다.  
 
