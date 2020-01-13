@@ -33,6 +33,35 @@ __MOTA__ : Multi-Object Tracking Accuracy
 
 __mAP__ : mean Average Precision
 
+__Precision__ : 분류기의 성능평가지표로 사용하는 정밀도를 의미한다.  
+수식으로는 다음과 같다.  
+
+$$
+precision = {TP \over TP + FP}
+$$
+
+즉, 참이라고 분류한 것 중 실제 참의 비율이다.  
+= How many selected item's are relevant
+
+__Recall__ : 마찬가지로 분류기의 성능평가지표에서 재현율을 의미한다.  
+수식으로는 다음과 같다.
+
+$$
+recall = {TP \over TP + FN}
+$$
+
+즉, 실제 참인 것들 중 참이라고 분류한 것의 비율이다.  
+= How many relevant item's are selected.
+
+__F1 Score__ : F1 Score 는 위의 precision 과 recall 의 조화평균으로써, 데이터 label 이 불균형 구조일 때, 모델의 성능을 정확하게 평가할 수 있다고 한다.  
+수식으로는 다음과 같다.
+
+$$
+F1\ score = 2 \times { Precision \times Recall \over Precision + Recall}
+$$
+
+즉, 단순 조화평균임을 확인할 수 있다.
+
 __FLOPS__ : FLoating point Operations Per Second  
     초당 부동소수점 연산이라는 의미로 1초동안 수행할 수 있는 부동소수점 연산의 횟수를 기준으로 한다.  
     이는 컴퓨터 하드웨어 관점에서의 Computing power 를 나타내는데 주로 쓰이게 되는데, machine learning 에서 하드웨어의 효율을 계산하기 위에서 종종 사용된다.  
