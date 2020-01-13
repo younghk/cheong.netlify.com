@@ -25,6 +25,8 @@ tags :
 C 로만 짜다가 심심해서 python 으로도 짜보았다.  
 앞으로는 python 으로도 종종 짜보게 될 것 같다.
 
+## 코드
+
 ```python
 import sys
 input = sys.stdin.readline
