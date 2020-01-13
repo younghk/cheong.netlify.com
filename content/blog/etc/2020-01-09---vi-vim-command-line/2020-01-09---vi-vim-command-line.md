@@ -4,7 +4,7 @@ title:     "VI VIM Command Line 명령어 정리"
 date:      "2020-01-09 21:50:12"
 layout:    post
 path:      "/posts/vi-vim-command-line/"
-category:  "etc"
+category:  "ETC"
 tags: 
     - vi
     - vim
@@ -139,12 +139,12 @@ description: "vi and vim command line 정리한 포스트입니다."
 
 ## 기타
 
-명령어 | 설명
-:---|:---
-:set nu | 에디터 숫자 표시
-:set nonu | 에디터 숫자 표시 끄기
-. | 바로 전 실행 명령어 재실행
-ctrl+i | 불필요한 화면 정리 후 다시 표시
+| 명령어       | 설명                 |
+| :-------- | :----------------- |
+| :set nu   | 에디터 숫자 표시          |
+| :set nonu | 에디터 숫자 표시 끄기       |
+| .         | 바로 전 실행 명령어 재실행    |
+| ctrl+i    | 불필요한 화면 정리 후 다시 표시 |
 
 ---
 
