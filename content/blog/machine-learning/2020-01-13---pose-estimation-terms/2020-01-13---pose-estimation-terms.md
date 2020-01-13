@@ -33,6 +33,11 @@ __MOTA__ : Multi-Object Tracking Accuracy
 
 __mAP__ : mean Average Precision
 
+__FLOPS__ : FLoating point Operations Per Second  
+    초당 부동소수점 연산이라는 의미로 1초동안 수행할 수 있는 부동소수점 연산의 횟수를 기준으로 한다.  
+    이는 컴퓨터 하드웨어 관점에서의 Computing power 를 나타내는데 주로 쓰이게 되는데, machine learning 에서 하드웨어의 효율을 계산하기 위에서 종종 사용된다.  
+    이 때, GFLOPS(Giga) = BFLOPS(Billions) 를 많이 쓴다.
+
 ## Metric
 
 __PCK__ : Detected-joint is considered correct if the distance between the predicted and the true joint is within a certain threshold.  
