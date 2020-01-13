@@ -8,7 +8,7 @@ git add .
 
 git commit -m "auto uploaded"
 
-git push -u origin master
+git push -u origin post-nightly
 
 echo -e "\033[32m"      # Green
 echo -e "processing completed"
