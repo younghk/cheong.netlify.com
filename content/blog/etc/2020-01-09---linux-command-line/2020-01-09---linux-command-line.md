@@ -57,10 +57,10 @@ cp ${source} ${destination}
 ftp ${remote ip} ${port}
 ```
 
--mget : local file 을 remote 로 전송  
+-mput : local file 을 remote 로 전송  
 
 ``` bash
-ftp> mget filename
+ftp> mput filename
 mput filename? [yes]/[no]
 ```
 
