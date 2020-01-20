@@ -164,6 +164,7 @@ $$
 _PGPG_ 를 생각해내게 된 배경은 다음과 같다.  
 
 학습을 시키는데에는 데이터가 많으면 좋다. 그런데 아무 데이터를 학습시킬 수는 없고 학습 시킬 수 있는 데이터가 필요한데, 원본 dataset 의 distribution 을 해치지 않으면서도 model 이 더 robust 하게 학습할 수 있는 방법이 없을까 해서 고안하게 되었다.  
+뿐만 아니라, human detector 가 bounding-box 를 친다고 했을 때 완벽하지 않은(imperfect) human proposal 이 만들어질 수도 있다. 이러한 것은 testing 때 모듈이 제대로 동작하지 않을 수도 있다.(앞서 이야기 한 것처럼)
 
 주요한 insight 는 detected b-box 와 ground truth b-box 사이의 distribution 을 모델링 할 수 있게 하는 것이다.  
 
