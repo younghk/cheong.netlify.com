@@ -89,3 +89,14 @@ kill -i 3000
 ```bash
 file filename
 ```
+
+### wc
+
+해당 파일의 word count(글자수 세기) 를 수행한다.
+
+```bash
+$ wc filename
+ [number of lines] [number of words] [count by bytes]
+```
+
+각각 -l, -w, -c 로 해당하는 것만 뽑아서 볼 수 있다.
