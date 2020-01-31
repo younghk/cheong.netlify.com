@@ -77,5 +77,15 @@ __PCKh @ 0.5__ : threshold = 50% of the head segment length(head bone link)
 threshold 로써 몸통이 아닌 머리 부분의 길이를 사용한 변형 평가 지표이다.  
 보통 PCKh @ 0.5 를 많이 사용하는 추세로 보인다.  
 
+## Dataset
+
+__COCO__ : Common Object in COntext 로 일상생활에서 보여지는 물체들을 데이터셋으로 구성해놓은 것이다.  
+[http://cocodataset.org/#home] 에서 자세한 것을 확인할 수 있으며, _Pose Estimation_ 에서는 keypoints dataset 을 이용한다.  
+_COCO dataset_ 의 평가지표는 _AP_ 를 사용하는데, 여기서 그냥 _mAP_ 를 사용하는 것이 아닌 다음과 같은 지표를 사용한다.  
+
+- AP@\[.5:.95\] : IoU 의 threshold 를 0.5 부터 0.95 까지 0.05 의 간격으로 달리 줬을 때의 AP 들의 평균을 의미한다.
+- AP@0.5 : IoU 의 threshold 가 0.5 일 때 이다.
+- AP small, medium, large : object 의 area 크기에 따른 평가 방법이다. 각각 $area \lt 32^2$, $32^2 \lt area \lt 96^2$, $area > 96^2$ 를 의미한다.
+
 ## ETC
 
