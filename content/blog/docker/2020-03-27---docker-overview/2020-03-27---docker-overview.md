@@ -1,7 +1,7 @@
 ---
 title: Docker Overview
 datetime: 2020-03-27 10:21:07
-category: docker
+category: Docker
 description: "Docker 가 무엇인지 간단하게 정리하고, 사용법 위주로 정리"
 tags:
   - Docker
@@ -49,6 +49,11 @@ docker ps -a # 실행하지 않는 모든 컨테이너를 보여준다.
 
 ```sh
 docker start [컨테이너 이름]
+
+docker run -d \ # Background 로 실행
+            -p [외부 포트:컨테이너 내부포트] \ # port 설정
+            --name [컨테이너 이름] \ #컨테이너 이름 설정
+            [이미지명:버전태그] # 해당 컨테이너를 구성할 이미지
 ```  
 
 컨테이너 삭제  
@@ -57,3 +62,8 @@ docker start [컨테이너 이름]
 docker rm -f [컨테이너 이름] # -f 옵션은 실행 중인 컨테이너도 강제로 삭제한다.
 ```  
 
+컨테이너에 직접 명령(접근)
+
+```sh
+docker exec -it [컨테이너 이름] /bin/bash # 실행 중인 컨테이너의 shell 에 접근
+```
