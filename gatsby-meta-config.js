@@ -9,6 +9,7 @@ module.exports = {
     medium: ``, // Your Medium account
     twitter: ``,
     facebook: ``,
+    linkedIn: `younghoon-kim-03a667191`
   },
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],
