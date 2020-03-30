@@ -136,9 +136,12 @@ module.exports = (async function () {
     await fs.ensureDir(destDir)
   }
 
+  const draft = "true";
   const title = await fetchTitle(category)
   const fileName = `${date}---` + getFileName(title)
-  const contents = refineContents({ title, datetime, category })
+  const tags = ""
+  const description = "";
+  const contents = refineContents({ draft, title, datetime, category, tags, description })
   const fileDir = `${destDir}/${fileName}`
   const fileDirExists = await fs.pathExists(fileDir)
 
