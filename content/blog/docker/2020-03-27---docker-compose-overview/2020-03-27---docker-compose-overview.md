@@ -13,3 +13,20 @@ Docker 를 이용한 개발 환경 구성은 많은 장점을 가지고 오나, 
 
 ## docker-compose.yml
 
+Docker Compose 를 이용하여 빌드 수행  
+이미 있는 이미지를 활용할 경우 skipping
+
+```bash
+docker-compose build
+```
+
+Docker Compose 를 이용하여 컨테이너 생성 및 실행
+
+```bash
+docker-compose up \
+                -d # Background 에서 실행
+```
+
+```bash
+docker-compose down
+```
