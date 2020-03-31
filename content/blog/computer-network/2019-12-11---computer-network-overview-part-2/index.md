@@ -1,5 +1,5 @@
 ---
-draft:     true
+draft:     false
 title:     "Computer Network Overview Part 2"
 date:      "2019-12-11 17:41:09"
 layout:    post
@@ -300,9 +300,9 @@ host A 가 {5.5.5.2:1001} 로 보내고 {5.5.5.2:1001} 에서 receive 할 것을
 
 이를 위해서는 두 개의 IP header 가 필요하게 된다.  
 
-src|dst|src|dst
-:--:|:--:|:--:|:--:
-router|locator|server|original
+|  src   |   dst   |  src   |   dst    |
+| :----: | :-----: | :----: | :------: |
+| router | locator | server | original |
 
 ![two tier ip addressing](./image29.png)
 
@@ -478,9 +478,9 @@ CN 입장에서는 MN 의 HoA 와 통신중이라 패킷이 src=CN주소, dst=MN
 
 이는 헤더 구성을 
 
-src|dst|option
-:---:|:---:|:---:
-\ |\ |HoA
+|  src  |  dst  | option |
+| :---: | :---: | :----: |
+|   \   |   \   |  HoA   |
 
 이런 식으로 HoA 를 넣게 되면 MN 까지는 가게 된다.  
 CoA -> HoA 는 header option 을 근거로 바꾸게 되며 이렇게 IP layer 에서 바꿔서 올리게 될 경우 App. layer 에서는 HoA 와 통신하고 있다고 생각하게 된다.(transparent)  

@@ -2,10 +2,10 @@
 draft: false
 title: "Netlify 로 github 블로그 이전하기"
 date: "2019-10-30"
+category: etc
 tags:
   - blog
   - Netlify
-published: true
 description: "로컬에서 항상 빌드한 후 깃허브에 배포하는 방식을 썼었는데 매번 부하를 많이 주는 것 같다고 느껴서 결국 배포해주는 서비스를 찾아서 블로그를 나름의 이전을 시키게 되었다. 어서 도메인을 사서 진정한 나의 블로그로 만들어야 할텐데!"
 ---
 
@@ -19,3 +19,5 @@ description: "로컬에서 항상 빌드한 후 깃허브에 배포하는 방식
 이제 비행기 이륙은 그만!!
 
 ![build image](./image1.png)
+
+<small>지난 블로그는 https://younghk.github.i 에서 확인할 수 있다.</small>

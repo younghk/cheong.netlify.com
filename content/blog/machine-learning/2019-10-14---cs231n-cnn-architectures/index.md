@@ -14,7 +14,7 @@ tags:
 
 <small>최종 수정일 : 2019-10-15</small>
 
-우리는 이전 두 개의 강의(를 정리한 [포스트1](../cs231n-Training-Neural-Networks-Part-1/), [포스트2](../cs231n-Training-Neural-Networks-Part-2/))에서 Neural Network 를 학습시키는 방법과 그 과정에 대해서 학습했었다.  
+우리는 이전 두 개의 강의(를 정리한 [포스트1](../cs231n-training-neural-networks-part-1/), [포스트2](../cs231n-training-neural-networks-part-2/))에서 Neural Network 를 학습시키는 방법과 그 과정에 대해서 학습했었다.  
 
 여기서 한 가지 더 NN 을 학습시키는 방법이 있는데, 바로 __Transfer Learning__ 이다.  
 
@@ -33,10 +33,10 @@ tags:
 
 각 경우에 대해 표로 정리해보면 아래와 같이 정리된다.  
 
-||비슷한 데이터셋|다른 데이터셋|
-|:---:|:---:|:---:|
-|적은 데이터|Linear Classifier를 top layer 에 적용|적용하기 힘들다. linear classifier 를 다른 stage 에서 시도해 보거나 해야한다.|
-|꽤 많은 데이터|몇몇 layer 에 finetuning|많은 레이어에 finetuning|
+|          |             비슷한 데이터셋              |                         다른 데이터셋                         |
+| :------: | :-------------------------------: | :-----------------------------------------------------: |
+|  적은 데이터  | Linear Classifier를 top layer 에 적용 | 적용하기 힘들다. linear classifier 를 다른 stage 에서 시도해 보거나 해야한다. |
+| 꽤 많은 데이터 |       몇몇 layer 에 finetuning       |                   많은 레이어에 finetuning                    |
 
 보통 ImageNet 으로 학습된 것을 이용하는데 ImageNet 은 1500만 장 이상의 데이터가 이미 축적된 아주 거대한 데이터셋이다.  
 

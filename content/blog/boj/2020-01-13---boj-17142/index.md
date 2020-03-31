@@ -1,4 +1,5 @@
 ---
+draft: false
 title : "[BOJ 17142] 연구소3"
 date : "2020-01-13 15:28:03"
 path: "/posts/boj-17142/"

@@ -29,6 +29,11 @@ export const Bio = () => (
                 </Link>
                 <div className="author-introduction">{introduction}</div>
                 <p className="author-socials">
+                  {social.linkedIn && (
+                    <a href={`https://linkedin.com/in/${social.linkedIn}`}>
+                      LinkedIn
+                    </a>
+                  )}
                   {social.github && (
                     <a href={`https://github.com/${social.github}`}>GitHub</a>
                   )}
@@ -73,6 +78,7 @@ const bioQuery = graphql`
           github
           medium
           facebook
+          linkedIn
         }
       }
     }
