@@ -20,8 +20,8 @@ Required Features
 - [ ] Table Of Contents(ToC)
 - [ ] image size
 - [ ] wide context view(for desktop)
-- [ ] gif loop infinity
-- [ ] About
+- [x] gif loop infinity
+- [x] About
 - [ ] RSS
 - [ ] hr tag
 - [ ] image thumbnail  
@@ -29,7 +29,7 @@ Required Features
 - [ ] paging  
 - [ ] table align
 - [ ] blockquote style
-- [ ] description
+- [x] description
 - [ ] tags
 
 ---
