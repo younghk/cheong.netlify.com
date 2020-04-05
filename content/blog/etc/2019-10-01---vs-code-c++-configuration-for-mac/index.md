@@ -22,6 +22,7 @@ VS Code에서 C++을 이용하려면 Microsoft에서 제공하는 C/C++ extensio
 설치가 완료되었으면 연습용 cpp 파일을 만들어서 간단하게 코드를 짜보자.  
   
 역시 연습용 코드는 국룰인 hello world
+
 ``` cpp
 /* hello.cpp */
 #include <iostream>
@@ -70,6 +71,7 @@ tasks.json은 이렇게 생겼다.
     ]
 }
 ```
+
 여기서 `tasks` 부분을 변경하여 원하는대로 명령어를 실행할 수 있다.
 
 ``` json

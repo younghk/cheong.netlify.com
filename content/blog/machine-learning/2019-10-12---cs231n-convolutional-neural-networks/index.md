@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "[cs231n-lec5] Convolutional Neural Networks"
 date: "2019-10-12T02:47:00.1234"
 layout: post

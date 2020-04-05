@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: Cascade Feature Aggregation for Human Pose Estimation
 date: 2020-01-08 12:53:57
 path:       "/machine-learning/2020-01-08---cascade-feature-aggregation-for-human-pose-estimation/2020-01-08---cascade-feature-aggregation-for-human-pose-estimation/"

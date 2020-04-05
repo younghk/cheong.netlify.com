@@ -1,5 +1,5 @@
 ---
-draft:     false
+draft:     true
 title:     "Message Authentication Code"
 date:      "2019-12-03 08:26:33"
 layout:    post
@@ -24,12 +24,12 @@ description: "Message Authentiation Code(MAC) 에 대해 간략하게 정리한 
 
 - Requirements  
 
-  Attacks|Measures
-  :---:|:---:
-  Disclosure<br />Traffic analysis | Message hiding (e.g., encryption)
-  Masquerade<br />Content modification<br />Sequence modification<br />Timing modification|Message authentication<br />Digital signature
-  Source repudiation|Digital signature
-  Destination repudiation|Digital signature + additional protocol
+  |                                         Attacks                                          |                   Measures                    |
+  | :--------------------------------------------------------------------------------------: | :-------------------------------------------: |
+  |                             Disclosure<br />Traffic analysis                             |       Message hiding (e.g., encryption)       |
+  | Masquerade<br />Content modification<br />Sequence modification<br />Timing modification | Message authentication<br />Digital signature |
+  |                                    Source repudiation                                    |               Digital signature               |
+  |                                 Destination repudiation                                  |    Digital signature + additional protocol    |
 
 ### Symmetric Encryption for Message Authentication
 

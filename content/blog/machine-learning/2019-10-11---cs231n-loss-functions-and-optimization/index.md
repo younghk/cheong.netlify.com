@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "[cs231n-lec3] Loss Functions and Optimization"
 date: "2019-10-11 02:23:14"
 layout: post

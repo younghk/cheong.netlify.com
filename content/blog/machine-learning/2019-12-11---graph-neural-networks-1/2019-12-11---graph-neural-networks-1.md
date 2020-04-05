@@ -1,5 +1,5 @@
 ---
-draft:     false
+draft:     true
 title:     "Graph Neural Networks 1"
 date:      "2019-12-11 11:14:15"
 layout:    post

@@ -1,5 +1,5 @@
 ---
-draft:     false
+draft:     true
 title:     "Public-Key Cryptography and RSA"
 date:      "2019-12-01 21:35:26"
 layout:    post
@@ -53,10 +53,10 @@ private key 로 암호화를 할 경우 signature 를 하게 되는 것이다.
 
 만약 이렇게 sign 해야할 정보가 중요하다면, public key 로 한 번 더 암호화해주어야 한다.
 
-need|Conventional Encryption|Public-Key Encryption
----|:---:|:---:
-Needed to Work|1. 암호화와 복호화에 같은 알고리즘과 키가 사용되어야 함.<br>2. sender 와 receiver 가 알고리즘과 키를 공유하고 있어야함|1. 하나의 알고리즘이 key pair 를 이용해 암호화 및 복호화 됨.<br>2. sender 와 receiver 가 각각 matching 되는 key pair 를 가지고 있어야함.
-Needed for Security|1. 키가 안전하게 지켜져야 함.<br>2. 다른 정보가 없다면 메세지를 해독하는게 불가능해야 함.<br>3. 알고리즘에 대한 정보와 ciphertext 의 예들로부터 키를 알아내는게 불충분해야 함.|1. 두 키 중 하나는 안전하게 지켜져야 함.<br>2. 다른 정보가 없다면 메세지를 해독하는게 불가능해야 함.<br>3. 알고리즘에 대한 정보와 하나의 키, ciphertext 의 예들로부터 키를 알아내는게 불충분해야 함.
+| need                |                                             Conventional Encryption                                             |                                                     Public-Key Encryption                                                     |
+| ------------------- | :-------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| Needed to Work      |                 1. 암호화와 복호화에 같은 알고리즘과 키가 사용되어야 함.<br>2. sender 와 receiver 가 알고리즘과 키를 공유하고 있어야함                  |            1. 하나의 알고리즘이 key pair 를 이용해 암호화 및 복호화 됨.<br>2. sender 와 receiver 가 각각 matching 되는 key pair 를 가지고 있어야함.             |
+| Needed for Security | 1. 키가 안전하게 지켜져야 함.<br>2. 다른 정보가 없다면 메세지를 해독하는게 불가능해야 함.<br>3. 알고리즘에 대한 정보와 ciphertext 의 예들로부터 키를 알아내는게 불충분해야 함. | 1. 두 키 중 하나는 안전하게 지켜져야 함.<br>2. 다른 정보가 없다면 메세지를 해독하는게 불가능해야 함.<br>3. 알고리즘에 대한 정보와 하나의 키, ciphertext 의 예들로부터 키를 알아내는게 불충분해야 함. |
 
 ![public key cryptosystem secrecy](./image3.png)
 
@@ -78,12 +78,12 @@ confidentiality 와 authentication 을 둘 다 적용하는 모습이다.
 
 아래와 같이 각 알고리즘이 보장하는 카테고리를 확인할 수 있다.
 
-Algorithm|En(De)cryption|Digital Signature|Key Exchange
-:---:|:---:|:---:|:---:
-RSA|Y|Y|Y
-Elliptic Curve|Y|Y|Y
-Diffie-Hellman|N|N|Y
-DSS|N|Y|N
+|   Algorithm    | En(De)cryption | Digital Signature | Key Exchange |
+| :------------: | :------------: | :---------------: | :----------: |
+|      RSA       |       Y        |         Y         |      Y       |
+| Elliptic Curve |       Y        |         Y         |      Y       |
+| Diffie-Hellman |       N        |         N         |      Y       |
+|      DSS       |       N        |         Y         |      N       |
 
 ### Public-Key Requirements
 

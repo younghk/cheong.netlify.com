@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "Block Cipher Operation"
 date: "2019-10-15T03:06:00.1234"
 layout: post
@@ -131,19 +131,19 @@ $$
 
 NIST SP 800-38A 에서는 5가지 모드에 대해 정의내리는데, block 과 stream 모드로 광범위한 어플리케이션에서 적용되도록 하고 있다.  
 
-|Block Mode|Stream Mode|
-|:---:|:---:|
-|Electronic codebook(ECB)<br>Cipher block chaining(CBC)|Cipher feedback(CFB)<br>Output feedback(OFB)<br>Counter(CTR)|
+|                       Block Mode                       |                         Stream Mode                          |
+| :----------------------------------------------------: | :----------------------------------------------------------: |
+| Electronic codebook(ECB)<br>Cipher block chaining(CBC) | Cipher feedback(CFB)<br>Output feedback(OFB)<br>Counter(CTR) |
 
 위와 같은 종류의 모드가 있으며 각 모드들에 대해 정리하면 다음과 같다.  
 
-|Mode|Description|Typical Application|
-|:---|:---|:---|
-|Electronic Codebook(ECB)|각 64-bit 평문으로 된 블록은 같은 키로 독립적이게 암호화 된다.|단일 정보에 대한 보안 전송이 필요한 경우(e.g. an encryption key)|
-|Cipher Block Chaining(CBC)|각 블록은 이전 블록이 암호화 된 것과 XOR 연산 후 암호화를 거치게 된다.|<ul><li>일반적인 block 기반의 데이터 전송이 필요할 때</li><li>인증(Authentication)</li></ul>|
-|Cipher Feedback(CFB)|입력의 s-bit 가 한 번에 진행된다. 이전의 암호문은 암호화 알고리즘의 입력으로 쓰여 pseudo-random output 을 만들어내게 된다.|<ul><li>일반적인  stream 기반 데이터 전송이 필요할 때</li><li>인증(Authentication)</li></ul>|
-|Output Feedback(OFB)|CFB 와 비슷하지만 암호화 알고리즘에 이전 암호문이 사용되지 않고 전체 블록이 사용된다.|stream 기반의 데이터 전송이 noisy channel 에서 이루어질 때(e.g. satelite communication)|
-|Counter(CTR)|각 평문 블록이 암호화된 counter 와 XOR 된다. 각 부분 블록의 연산 후에 counter 가 증가한다.|<ul><li>일반적인 block 기반 데이터 전송이 필요할 때</li><li>고속 전송이 요구될 때 유용</li></ul>|
+| Mode                       | Description                                                                        | Typical Application                                                        |
+| :------------------------- | :--------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
+| Electronic Codebook(ECB)   | 각 64-bit 평문으로 된 블록은 같은 키로 독립적이게 암호화 된다.                                            | 단일 정보에 대한 보안 전송이 필요한 경우(e.g. an encryption key)                            |
+| Cipher Block Chaining(CBC) | 각 블록은 이전 블록이 암호화 된 것과 XOR 연산 후 암호화를 거치게 된다.                                        | <ul><li>일반적인 block 기반의 데이터 전송이 필요할 때</li><li>인증(Authentication)</li></ul>  |
+| Cipher Feedback(CFB)       | 입력의 s-bit 가 한 번에 진행된다. 이전의 암호문은 암호화 알고리즘의 입력으로 쓰여 pseudo-random output 을 만들어내게 된다. | <ul><li>일반적인  stream 기반 데이터 전송이 필요할 때</li><li>인증(Authentication)</li></ul> |
+| Output Feedback(OFB)       | CFB 와 비슷하지만 암호화 알고리즘에 이전 암호문이 사용되지 않고 전체 블록이 사용된다.                                 | stream 기반의 데이터 전송이 noisy channel 에서 이루어질 때(e.g. satelite communication)    |
+| Counter(CTR)               | 각 평문 블록이 암호화된 counter 와 XOR 된다. 각 부분 블록의 연산 후에 counter 가 증가한다.                     | <ul><li>일반적인 block 기반 데이터 전송이 필요할 때</li><li>고속 전송이 요구될 때 유용</li></ul>      |
 
 ### Electronic Codebook(ECB)
 

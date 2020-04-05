@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "[cs231n-lec4] Neural Networks and Backpropagation"
 date: "2019-10-11 02:30:00"
 layout: post
