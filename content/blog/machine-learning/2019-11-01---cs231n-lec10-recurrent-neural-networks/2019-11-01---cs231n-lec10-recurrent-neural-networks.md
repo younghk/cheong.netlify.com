@@ -1,5 +1,5 @@
 ---
-draft:     false
+draft:     true
 title:     "[cs231n-lec10] Recurrent Neural Networks"
 date:      "2019-11-01 17:27:23"
 layout:    post

@@ -20,4 +20,4 @@ description: "로컬에서 항상 빌드한 후 깃허브에 배포하는 방식
 
 ![build image](./image1.png)
 
-<small>지난 블로그는 https://younghk.github.i 에서 확인할 수 있다.</small>
+<small>지난 블로그는 https://younghk.github.io 에서 확인할 수 있다.</small>

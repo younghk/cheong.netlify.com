@@ -1,5 +1,5 @@
 ---
-draft:     false
+draft:     true
 title:     "Cryptographic Hash Functions"
 date:      "2019-12-02 16:02:28"
 layout:    post
@@ -124,15 +124,15 @@ hash function $h = H(x)$ 에 대해서 $x$ 는 $h$ 의 pre-image 이다.
 
 해쉬 함수는 다음의 requirement 를 가진다.
 
-Requirement|Description
-:---:|:---:
-Variable input size|H can be applied to a block of data of any size
-Fixed output size|H produces a fixed-length output
-Efficiency|H(x) is relatively easy to compute for any given x, making both hardware and software implementations practical
-Preimage resistant (one-way property)|For any given hash value $h$, it is computationally infeasible to find $y$ such that H($y$)=$h$.
-Second preimage resistant(weak collision resistant)|For any given block $x$, it is computationally infeasible to find $y \neq x$ with H($y$) = H($x$)
-Collision resistant (strong collision resistant)|It is computationally infeasible to find any pair($x$, $y$) such that H($x$) = H($y$)
-Pseudorandomness|Output of H meets standard tests for pseudorandomness
+|                     Requirement                     |                                                   Description                                                   |
+| :-------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------: |
+|                 Variable input size                 |                                 H can be applied to a block of data of any size                                 |
+|                  Fixed output size                  |                                        H produces a fixed-length output                                         |
+|                     Efficiency                      | H(x) is relatively easy to compute for any given x, making both hardware and software implementations practical |
+|        Preimage resistant (one-way property)        |        For any given hash value $h$, it is computationally infeasible to find $y$ such that H($y$)=$h$.         |
+| Second preimage resistant(weak collision resistant) |        For any given block $x$, it is computationally infeasible to find $y \neq x$ with H($y$) = H($x$)        |
+|  Collision resistant (strong collision resistant)   |              It is computationally infeasible to find any pair($x$, $y$) such that H($x$) = H($y$)              |
+|                  Pseudorandomness                   |                              Output of H meets standard tests for pseudorandomness                              |
 
 - preimage resistant : 어떤 해쉬값 h 에 대응하는 입력 y 를 찾는다면 깨짐
 - second preimage resistant : 입력 x 가 해쉬값 h 를 가리킨다 했을 때, 마찬가지인 해쉬값 h 인 입력 y 를 찾는다면 깨짐
@@ -236,13 +236,13 @@ SHA-256, 384, 512 가 바로 그 것이고 이들을 _SHA-2_ 라고 부른다.
 
 간략하게 SHA 의 버전들을 확인하고 가자.
 
-version|SHA-1|SHA-224|SHA-256|SHA-384|SHA-512
-:---:|:---:|:---:|:---:|:---:|:---:
-Message digest size|160|224|256|384|512
-Message size|$\lt 2^{64}$|$\lt 2^{64}$|$\lt 2^{64}$|$\lt 2^{128}$|$\lt 2^{128}$
-Block size|512|512|512|1024|1024
-Word size|32|32|32|64|64
-Number of Steps|80|64|64|80|80
+|       version       |    SHA-1     |   SHA-224    |   SHA-256    |    SHA-384    |    SHA-512    |
+| :-----------------: | :----------: | :----------: | :----------: | :-----------: | :-----------: |
+| Message digest size |     160      |     224      |     256      |      384      |      512      |
+|    Message size     | $\lt 2^{64}$ | $\lt 2^{64}$ | $\lt 2^{64}$ | $\lt 2^{128}$ | $\lt 2^{128}$ |
+|     Block size      |     512      |     512      |     512      |     1024      |     1024      |
+|      Word size      |      32      |      32      |      32      |      64       |      64       |
+|   Number of Steps   |      80      |      64      |      64      |      80       |      80       |
 
 ### SHA-512
 

@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: "[cs231n-lec8] Training Neural Networks, Part 2"
 date: "2019-10-13T02:51:00.1234"
 layout: post
