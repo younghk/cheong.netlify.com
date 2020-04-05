@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: "Block Ciphers and the Data Encryption Standard"
 date: "2019-10-11T02:25:00.1234"
 layout: post
