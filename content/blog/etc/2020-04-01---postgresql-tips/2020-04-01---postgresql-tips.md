@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: PostgreSQL 간단 정리
 datetime: 2020-04-01 12:53:17
 category: ETC
@@ -11,10 +11,16 @@ description: "PostgreSQL에 대해 간략히 정리하고 사용법 및 오류 �
 
 ## PostgreSQL 이란
 
+PostgreSQL 은 객체관계형 데이터베이스로, 오픈소스로 개발되고 있다.  
+기능적으로 오픈소스임에도 불구하고 뛰어나서 많은 인기를 끌고 있다.(Oracle, MS SQ, MySQL 다음 급)
 
 ## 명령어
 
-
+```bash
+psql -U [유저] -h [호스트] -P [포트]
+\list # DB 들에 대한 정보 출력
+\dt # 현재 타겟 DB 내 존재하는 table 출력
+```
 
 ## 오류 모음
 
