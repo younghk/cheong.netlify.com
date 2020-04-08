@@ -10,7 +10,7 @@ export default class TableOfContents extends React.Component {
         setPostHeaderId() {
             const headers = document.body.querySelectorAll('.post_single__body > h1, h2, h3, h4, h5, h6')
             if (!headers) {
-                return
+                return false
             }
             headers.forEach(header => {
                 const id = encodeURI(kebabCase(header.innerText))
@@ -26,9 +26,11 @@ export default class TableOfContents extends React.Component {
             this.tocHeader = toc
             this.postHeader = headers
         },
+
         setActiveHeader(index) {
             if (!this.tocHeader.length) {
-                return
+                console.log(this)
+                return false
             }
 
             const prev_active_header = document.body.querySelector('.active')
@@ -37,6 +39,8 @@ export default class TableOfContents extends React.Component {
             }
 
             this.tocHeader[index].classList.add('active')
+
+            return true
         }
     }
 
@@ -46,8 +50,10 @@ export default class TableOfContents extends React.Component {
     }
 
     shouldComponentUpdate() {
+        //console.log(this)
         this.registerEvent()
         this.HeaderManager.setPostHeaderId()
+        return true;
     }
 
     componentWillUnmount() {
