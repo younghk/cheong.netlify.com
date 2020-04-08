@@ -1,5 +1,5 @@
 ---
-draft:     true
+draft:     false
 title:     "cs231n lecture 13 - Visualizing and Understanding"
 date:      "2019-12-02 16:08:25"
 layout:    post
