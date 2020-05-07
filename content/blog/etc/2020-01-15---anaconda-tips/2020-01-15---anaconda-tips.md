@@ -1,22 +1,21 @@
 ---
-draft:     false
-title:     "Anaconda Tips"
-date:      "2020-01-15 09:13:42"
-layout:    post
-path:      "/posts/anaconda-tips/"
-category:  "ETC"
-tags: 
-    - Anaconda
-    - Python
-description: "Anaconda 관련 정리 포스트입니다."
+draft: false
+title: 'Anaconda Tips'
+date: '2020-01-15 09:13:42'
+layout: post
+#path:      "/posts/anaconda-tips/"
+category: 'ETC'
+tags:
+  - Anaconda
+  - Python
+description: 'Anaconda 관련 정리 포스트입니다.'
 ---
 
 Anaconda 관련해서 자주 사용하고 필요한 것들을 정리해보자.
 
-
 ## Create Virtual Environment
 
-특정 파이썬 버전으로 가상 환경을 구축하고 싶을 때  
+특정 파이썬 버전으로 가상 환경을 구축하고 싶을 때
 
 ```bash
 conda create -n venv_name python=x.x anaconda
