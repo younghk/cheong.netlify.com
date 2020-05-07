@@ -1,7 +1,7 @@
 ---
+draft: false
 title: '정보보호(Information Security) 공부를 시작하며'
 date: '2019-10-09T02:13:00.1234'
-draft: false
 #path: "/posts/information-security-overview/"
 layout: post
 category: 'Information Security'

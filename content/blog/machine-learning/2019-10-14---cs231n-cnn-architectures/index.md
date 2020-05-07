@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: '[cs231n-lec9] CNN Architectures'
 date: '2019-10-14T03:04:00.1234'
 layout: post
