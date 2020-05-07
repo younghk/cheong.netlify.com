@@ -1,11 +1,11 @@
 ---
 draft: false
-title : "[BOJ 17142] 연구소3"
-date : "2020-01-13 15:28:03"
-path: "/posts/boj-17142/"
-category: "BOJ"
-description: ""
-tags :
+title: '[BOJ 17142] 연구소3'
+date: '2020-01-13 15:28:03'
+#path: "/posts/boj-17142/"
+category: 'BOJ'
+description: ''
+tags:
   - PS
   - Algorithm
   - Python
@@ -17,11 +17,11 @@ tags :
 ## 풀이
 
 완전탐색의 전형적인 문제이다.  
-바이러스의 총 개수와 그 위치를 하나의 item 으로 생각하여, 모든 item 에 대한 경우의 수(M개의 바이러스를 활성화시킬 수 있는 경우의 수)에 대해 고려해주면 된다.  
+바이러스의 총 개수와 그 위치를 하나의 item 으로 생각하여, 모든 item 에 대한 경우의 수(M개의 바이러스를 활성화시킬 수 있는 경우의 수)에 대해 고려해주면 된다.
 
-이런 완전탐색 문제에서 combination(또는 permutation) 으로 경우의 수를 빠르게 계산해줄 수도 있으나, 직접 구현하는 경우에 몇 가지 트릭을 적용해 볼 수 있는데,  `경우의 수를 조합할 때 이전 index보다 현재 index가 항상 크도록` 경우의 수를 조합하게 된다면 시간적인 측면에서 많은 효율 향상을 가지고 올 수 있다.  
+이런 완전탐색 문제에서 combination(또는 permutation) 으로 경우의 수를 빠르게 계산해줄 수도 있으나, 직접 구현하는 경우에 몇 가지 트릭을 적용해 볼 수 있는데, `경우의 수를 조합할 때 이전 index보다 현재 index가 항상 크도록` 경우의 수를 조합하게 된다면 시간적인 측면에서 많은 효율 향상을 가지고 올 수 있다.
 
-아래의 어떤 부분이 해당 트릭이 적용되었는지 생각해보자.  
+아래의 어떤 부분이 해당 트릭이 적용되었는지 생각해보자.
 
 C 로만 짜다가 심심해서 python 으로도 짜보았다.  
 앞으로는 python 으로도 종종 짜보게 될 것 같다.
@@ -88,7 +88,7 @@ def dfs(lev, lim, prev, check, act_virus, virus, vcnt, L, N, nvcnt):
         #print(val)
         if val != -1 and ans > val:
             ans = val
-        return 
+        return
     for x in range(prev+1, vcnt):
         if check[x] == 0:
             check[x] = 1
@@ -108,7 +108,7 @@ def laboratory3(N, M, L, virus, vcnt):
         print(-1)
     else:
         print(ans)
-    
+
 if __name__ == "__main__":
     # execute only if run as a script
     N, M = map(int,input().split())

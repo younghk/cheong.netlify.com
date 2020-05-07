@@ -3,13 +3,13 @@ module.exports = {
   description: `Cheong's log`,
   author: `Cheong`,
   introduction: `오직 부끄러워야 할 것은 열심히 살지 않은 어제의 나이다.`,
-  siteUrl: `https://cheong.netlify.com`, // Your blog site url
+  siteUrl: `https://cheong.netlify.app`, // Your blog site url
   social: {
     github: `younghk`, // Your GitHub account
     medium: ``, // Your Medium account
     twitter: ``,
     facebook: ``,
-    linkedIn: `younghoon-kim-03a667191`
+    linkedIn: `younghoon-kim-03a667191`,
   },
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],
